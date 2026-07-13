@@ -6,7 +6,12 @@ import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { FaqSection } from "@/components/site/faq-section";
 import { RelatedLinks } from "@/components/site/related-links";
 import { FAQS } from "@/lib/seo";
-import { Locale } from "@/i18n/routing";
+import { Locale, locales } from "@/i18n/routing";
+
+// Enable static rendering for all locales
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   title: "About — An AI Engineering Company, Not an Agency",
