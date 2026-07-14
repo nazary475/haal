@@ -1,0 +1,72 @@
+════════════════════════════════════════════════════════════════════════
+  CLOUDFLARE DNS RECORDS FOR: haal-lab.solutions
+════════════════════════════════════════════════════════════════════════
+
+Copy these EXACT records into your Cloudflare DNS settings:
+
+┌─────────┬──────┬─────────────────────────┬───────────┬──────┐
+│  Type   │ Name │        Content          │   Proxy   │ TTL  │
+├─────────┼──────┼─────────────────────────┼───────────┼──────┤
+│    A    │  @   │   185.199.108.153       │ Proxied ☁ │ Auto │
+│    A    │  @   │   185.199.109.153       │ Proxied ☁ │ Auto │
+│    A    │  @   │   185.199.110.153       │ Proxied ☁ │ Auto │
+│    A    │  @   │   185.199.111.153       │ Proxied ☁ │ Auto │
+│  CNAME  │ www  │  nazary475.github.io    │ Proxied ☁ │ Auto │
+└─────────┴──────┴─────────────────────────┴───────────┴──────┘
+
+IMPORTANT: 
+- "@" means root domain (haal-lab.solutions)
+- "www" is the subdomain (www.haal-lab.solutions)
+- "Proxied ☁" = Orange cloud ENABLED (provides CDN + security)
+- These are GitHub Pages official IP addresses
+
+════════════════════════════════════════════════════════════════════════
+  WHAT EACH RECORD DOES
+════════════════════════════════════════════════════════════════════════
+
+A Records (x4):
+→ Point your domain directly to GitHub Pages servers
+→ GitHub uses 4 IPs for redundancy and load balancing
+→ All 4 must be added for reliability
+
+CNAME Record (www):
+→ Points www.haal-lab.solutions to your GitHub Pages
+→ Ensures www version works too
+→ Both haal-lab.solutions and www.haal-lab.solutions will work
+
+════════════════════════════════════════════════════════════════════════
+  FLOW DIAGRAM
+════════════════════════════════════════════════════════════════════════
+
+User Types:
+haal-lab.solutions
+        ↓
+Cloudflare DNS Lookup
+(checks DNS records above)
+        ↓
+Cloudflare CDN/Proxy
+(caching, security, optimization)
+        ↓
+GitHub Pages Server
+(185.199.108-111.153)
+        ↓
+Your Website Files
+(/out directory)
+        ↓
+User Sees Website ✓
+
+════════════════════════════════════════════════════════════════════════
+  VERIFICATION COMMANDS
+════════════════════════════════════════════════════════════════════════
+
+After setup, test with these commands in PowerShell:
+
+# Test DNS resolution
+nslookup haal-lab.solutions
+
+# Test website connectivity
+curl https://haal-lab.solutions -I
+
+# Expected result: Should show Cloudflare in headers and 200 OK
+
+════════════════════════════════════════════════════════════════════════
