@@ -31,11 +31,11 @@ export function ContactPage() {
                     Email
                   </h2>
                   <a
-                    href="mailto:hello@haal-lab.solutions"
+                    href="mailto:hussain.nazary@haal-lab.solutions"
                     className="group mt-2 inline-flex items-center gap-2 text-base text-hl-cyan"
                   >
                     <Mail className="h-4 w-4" />
-                    hello@haal-lab.solutions
+                    hussain.nazary@haal-lab.solutions
                   </a>
                   <p className="mt-4 text-sm leading-relaxed text-hl-muted">
                     For partnerships, technical inquiries, and project scoping. We read every
@@ -62,10 +62,10 @@ export function ContactPage() {
                       handle="Haal Lab"
                     />
                     <ChannelRow
-                      href="mailto:hello@haal-lab.solutions"
+                      href="mailto:hussain.nazary@haal-lab.solutions"
                       icon={<Mail className="h-4 w-4" />}
                       label="Email"
-                      handle="hello@haal-lab.solutions"
+                      handle="hussain.nazary@haal-lab.solutions"
                     />
                   </ul>
                 </div>

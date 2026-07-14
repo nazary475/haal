@@ -37,7 +37,7 @@ export function NetworkPage() {
               </Lead>
             </div>
             <a
-              href="mailto:hello@haal-lab.solutions"
+              href="mailto:hussain.nazary@haal-lab.solutions"
               className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90"
             >
               Become a partner

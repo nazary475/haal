@@ -26,7 +26,7 @@ const INTERESTS = [
  * This makes the form work on static hosts like GitHub Pages.
  */
 const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "";
-const CONTACT_EMAIL = "hello@haal-lab.solutions";
+const CONTACT_EMAIL = "hussain.nazary@haal-lab.solutions";
 
 export function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
@@ -90,14 +90,14 @@ export function ContactForm() {
         title: FORMSPREE_ENDPOINT ? "Message sent" : "Opening your email client",
         description: FORMSPREE_ENDPOINT
           ? "We will respond within two business days."
-          : "Your email client should now have a pre-filled message to hello@haal-lab.solutions.",
+          : "Your email client should now have a pre-filled message to hussain.nazary@haal-lab.solutions.",
       });
     } catch (err) {
       console.error("[Haal Lab contact] submission failed:", err);
       toast({
         title: "Something went wrong",
         description:
-          "Could not send the form. Please email us directly at hello@haal-lab.solutions.",
+          "Could not send the form. Please email us directly at hussain.nazary@haal-lab.solutions.",
       });
     } finally {
       setSubmitting(false);
@@ -117,14 +117,14 @@ export function ContactForm() {
           {FORMSPREE_ENDPOINT ? (
             <>
               Thank you for reaching out. We will review your inquiry and respond from{" "}
-              <span className="text-foreground">hello@haal-lab.solutions</span> within two
+              <span className="text-foreground">hussain.nazary@haal-lab.solutions</span> within two
               business days.
             </>
           ) : (
             <>
               Your email client should have opened with a pre-filled message. If it
               didn&apos;t, email us directly at{" "}
-              <span className="text-foreground">hello@haal-lab.solutions</span> — we
+              <span className="text-foreground">hussain.nazary@haal-lab.solutions</span> — we
               respond within two business days.
             </>
           )}

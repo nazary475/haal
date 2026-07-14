@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import { Globe, Check, ChevronDown } from "lucide-react";
 import { locales, localeNames, type Locale } from "@/i18n/routing";
+import { saveLocalePreference } from "@/lib/locale-detection";
 
 /**
  * LanguageSwitcher — dropdown that lets visitors switch the site language.
@@ -36,6 +37,9 @@ export function LanguageSwitcher() {
   const switchTo = (nextLocale: Locale) => {
     setOpen(false);
     if (nextLocale === currentLocale) return;
+
+    // Save user's language preference to cookie
+    saveLocalePreference(nextLocale);
 
     // Strip current locale prefix from pathname
     // With localePrefix: "always", every locale has a prefix (en, de, fr, es, it)

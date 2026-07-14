@@ -71,7 +71,7 @@ A world where every organization can run its own intelligence. The most valuable
 
 ## Contact
 
-- Email: hello@haal-lab.solutions
+- Email: hussain.nazary@haal-lab.solutions
 - Website: https://haal-lab.solutions
 - GitHub: https://github.com/haal-lab
 - LinkedIn: https://www.linkedin.com/company/haal-lab

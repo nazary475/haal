@@ -9,6 +9,7 @@ import {
 } from "@/components/blocks/home-sections";
 import { PartnersSection } from "@/components/site/partners-section";
 import { AdvisorsSection } from "@/components/site/advisors-section";
+import { FounderSection } from "@/components/site/founder-section";
 
 export function HomePage() {
   return (
@@ -19,6 +20,7 @@ export function HomePage() {
       <WhySection />
       <PartnersSection variant="compact" />
       <AdvisorsSection variant="compact" />
+      <FounderSection />
       <ServicesSection />
       <AboutTeaserSection />
       <ContactCtaSection />

@@ -12,11 +12,29 @@ Target customers: European organizations needing **private, owned AI** without c
 
 ---
 
-## Proposed Packages (4 Tiers)
+## Proposed Packages (5 Tiers)
 
 Based on the business and real-world customer segments:
 
-### 1. 🔬 Explorer — €4,900 one-time
+### 1. 🚀 Starter — €1,900 one-time (NEW!)
+**For**: Solo founders, freelancers, indie makers, bootstrapped entrepreneurs
+**What they need**: Quick, affordable AI validation without enterprise overhead
+
+| Includes | Details |
+|----------|---------|
+| Consultation | 1-hour focused call to understand your use case |
+| Feasibility assessment | Brief technical assessment |
+| Quick prototype | 3-5 day rapid prototype on your sample data |
+| Setup guidance | Documentation and setup instructions |
+| Email support | 2 weeks of email support |
+| Duration | 1 week |
+| Delivery | Working prototype + setup guide |
+
+**Perfect for**: Testing a simple AI idea quickly at an affordable price point
+
+---
+
+### 2. 🔬 Explorer — €4,900 one-time
 **For**: Startup founders, indie hackers, small website owners, solo CEOs
 **What they need**: Validate whether AI can solve a specific problem before committing budget
 
@@ -30,7 +48,7 @@ Based on the business and real-world customer segments:
 
 ---
 
-### 2. 🏢 Professional — €14,900 /project
+### 3. 🏢 Professional — €14,900 /project
 **For**: Businesses, agencies, growing companies, website platforms
 **What they need**: A production-ready AI system (assistant, RAG search, or automation)
 
@@ -46,7 +64,7 @@ Based on the business and real-world customer segments:
 
 ---
 
-### 3. 🏛️ Enterprise — €39,900+ /engagement
+### 4. 🏛️ Enterprise — €39,900+ /engagement
 **For**: Large enterprises, government, regulated industries, hospital systems
 **What they need**: Private, air-gapped AI infrastructure with compliance, multi-system orchestration
 
@@ -64,7 +82,7 @@ Based on the business and real-world customer segments:
 
 ---
 
-### 4. 🎓 Research & Academic — Custom pricing
+### 5. 🎓 Research & Academic — Custom pricing
 **For**: University labs, research institutions (Fraunhofer, INRIA-style), PhD students
 **What they need**: Specialized retrieval systems, experiment infrastructure, reproducible pipelines — at academic-friendly pricing
 
@@ -105,7 +123,7 @@ Based on the business and real-world customer segments:
 ### Pricing Page Component
 
 #### [NEW] [pricing-page.tsx](file:///c:/Users/MY-PC/Desktop/haal-lab/src/components/pages/pricing-page.tsx)
-- New page component with 4 pricing tiers displayed as premium cards
+- New page component with 5 pricing tiers displayed as premium cards
 - Animated tier cards with the existing `hl-card-hover` / `hl-card-glow` design system
 - "Most Popular" badge on the Professional tier
 - CTA buttons linking to `/contact`
@@ -154,7 +172,7 @@ Based on the business and real-world customer segments:
 
 ### Manual Verification
 - Run `npm run dev` and navigate to `/en/pricing`
-- Verify all 4 tier cards render correctly with responsive layout
+- Verify all 5 tier cards render correctly with responsive layout
 - Check mobile responsiveness (cards stack on mobile)
 - Verify CTA buttons link correctly to `/contact`
 - Check all 5 locale versions render without missing translation errors

@@ -48,7 +48,7 @@ export default async function Projects({
   setRequestLocale(locale as Locale);
   return (
     <>
-      <PageSchemas path="/projects" />
+      <PageSchemas path="/projects" locale={locale} />
       <Breadcrumbs path="/projects" />
       <ProjectsPage />
       <FaqSection

@@ -1,4 +1,6 @@
 import { SITE, BREADCRUMBS, FAQS, ENGAGEMENT_STEPS, CAPABILITIES, FAQ } from "@/lib/seo";
+import { getFAQsByLocale } from "@/lib/seo-faqs";
+import type { Locale } from "@/i18n/routing";
 
 /**
  * JSON-LD structured data for search engines and AI chatbots.
@@ -105,6 +107,81 @@ export function professionalServiceSchema() {
   };
 }
 
+/** SoftwareApplication schema — represents our AI platform capabilities. */
+export function softwareApplicationSchema(locale: string) {
+  const localePrefix = locale === "en" ? "en" : locale;
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Haal Lab AI Platform",
+    applicationCategory: "BusinessApplication",
+    applicationSubCategory: "Artificial Intelligence Platform",
+    description:
+      "Private AI systems platform for building LLM applications, RAG systems, and intelligent automation with on-premise deployment capabilities.",
+    url: `${SITE.url}/${localePrefix}`,
+    operatingSystem: "Linux, Windows, macOS",
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "EUR",
+      lowPrice: "1900",
+      highPrice: "39900",
+      priceSpecification: [
+        {
+          "@type": "UnitPriceSpecification",
+          price: "1900",
+          priceCurrency: "EUR",
+          name: "Starter Package",
+        },
+        {
+          "@type": "UnitPriceSpecification",
+          price: "4900",
+          priceCurrency: "EUR",
+          name: "Explorer Package",
+        },
+        {
+          "@type": "UnitPriceSpecification",
+          price: "14900",
+          priceCurrency: "EUR",
+          name: "Professional Package",
+        },
+        {
+          "@type": "UnitPriceSpecification",
+          price: "39900",
+          priceCurrency: "EUR",
+          name: "Enterprise Package",
+        },
+      ],
+    },
+    provider: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
+    },
+    featureList: [
+      "Private on-premise AI deployment",
+      "RAG (Retrieval-Augmented Generation) systems",
+      "LLM application development",
+      "Air-gapped deployment support",
+      "Open-weight model integration",
+      "GDPR & EU AI Act compliance",
+      "Multi-language support",
+      "Vector database integration",
+      "GPU optimization",
+      "Kubernetes orchestration",
+    ],
+    softwareRequirements: "Docker, Kubernetes (optional), GPU (optional)",
+    releaseNotes: `${SITE.url}/${localePrefix}/research`,
+    screenshot: `${SITE.url}/og-image.png`,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      ratingCount: "1",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+}
+
 /** BreadcrumbList schema — per page. */
 export function breadcrumbSchema(path: string) {
   const crumbs = BREADCRUMBS[path] || BREADCRUMBS["/"];
@@ -185,9 +262,16 @@ export function articleSchema(opts: {
  * JsonLd — site-wide schemas (rendered in layout.tsx).
  * Per-page schemas are rendered by <PageSchema /> below.
  */
-export function JsonLd() {
+export function JsonLd({ locale }: { locale?: string }) {
   return (
     <>
+      {locale && (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.setAttribute('lang', '${locale}');`,
+          }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
@@ -200,6 +284,12 @@ export function JsonLd() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema()) }}
       />
+      {locale && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema(locale)) }}
+        />
+      )}
     </>
   );
 }
@@ -208,13 +298,16 @@ export function JsonLd() {
  * PageSchema — renders per-page JSON-LD based on the current route.
  * Place this once per page (typically in the page.tsx file).
  */
-export function PageSchemas({ path }: { path: string }) {
+export function PageSchemas({ path, locale }: { path: string; locale?: string }) {
   const schemas: object[] = [breadcrumbSchema(path)];
+
+  // Get locale-specific FAQs
+  const localeFAQs = locale ? getFAQsByLocale(locale) : FAQS;
 
   // Attach FAQ schema if this path has FAQs
   const faqKey = path === "/" ? "home" : path.slice(1);
-  if (FAQS[faqKey]) {
-    schemas.push(faqSchema(FAQS[faqKey]));
+  if (localeFAQs[faqKey] && localeFAQs[faqKey].length > 0) {
+    schemas.push(faqSchema(localeFAQs[faqKey]));
   }
 
   // Solutions page also gets the HowTo schema

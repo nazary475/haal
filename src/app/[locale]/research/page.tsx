@@ -49,7 +49,7 @@ export default async function Research({
   setRequestLocale(locale as Locale);
   return (
     <>
-      <PageSchemas path="/research" />
+      <PageSchemas path="/research" locale={locale} />
       <Breadcrumbs path="/research" />
       <ResearchPage />
       <FaqSection

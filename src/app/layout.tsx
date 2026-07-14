@@ -1,4 +1,5 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,13 +19,94 @@ const jetbrainsMono = JetBrains_Mono({
  * The locale-aware layout (Navbar, Footer, metadata, JSON-LD) lives in
  * src/app/[locale]/layout.tsx.
  */
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://haal-lab.solutions"),
+  title: {
+    default: "Haal Lab — Engineering Intelligent Systems",
+    template: "%s · Haal Lab",
+  },
+  description:
+    "Deep-tech AI engineering company. We build private AI systems, LLM applications, RAG, and AI infrastructure for European organizations.",
+  applicationName: "Haal Lab",
+  authors: [{ name: "Haal Lab", url: "https://haal-lab.solutions" }],
+  generator: "Next.js",
+  keywords: [
+    "AI engineering",
+    "private AI",
+    "LLM applications",
+    "RAG systems",
+    "AI infrastructure",
+    "on-premise AI",
+    "GDPR compliant AI",
+    "European AI",
+  ],
+  referrer: "origin-when-cross-origin",
+  creator: "Haal Lab",
+  publisher: "Haal Lab",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
+  manifest: "/manifest.json",
+  openGraph: {
+    type: "website",
+    locale: "en",
+    url: "https://haal-lab.solutions",
+    siteName: "Haal Lab",
+    title: "Haal Lab — Engineering Intelligent Systems",
+    description:
+      "Deep-tech AI engineering company. Private AI systems, LLM applications, RAG, and AI infrastructure.",
+    images: [
+      {
+        url: "https://haal-lab.solutions/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Haal Lab — Engineering Intelligent Systems",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@haallab",
+    creator: "@haallab",
+    title: "Haal Lab — Engineering Intelligent Systems",
+    description:
+      "Deep-tech AI engineering company. Private AI systems, LLM applications, RAG, and AI infrastructure.",
+    images: ["https://haal-lab.solutions/og-image.png"],
+  },
+  verification: {
+    google: "your-google-verification-code", // Add your actual verification code
+  },
+  category: "technology",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#080B12",
+  colorScheme: "dark",
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -10,14 +10,14 @@ import { Locale } from "@/i18n/routing";
 export const metadata: Metadata = {
   title: "Contact — Start a Conversation with Haal Lab",
   description:
-    "Tell us what you are trying to build. Haal Lab responds to every serious inquiry with a concrete technical perspective — usually within two business days. Email: hello@haal-lab.solutions",
+    "Tell us what you are trying to build. Haal Lab responds to every serious inquiry with a concrete technical perspective — usually within two business days. Email: hussain.nazary@haal-lab.solutions",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: "Contact — Start a Conversation with Haal Lab",
     description:
-      "Tell us what you are trying to build. We respond within two business days. Email: hello@haal-lab.solutions",
+      "Tell us what you are trying to build. We respond within two business days. Email: hussain.nazary@haal-lab.solutions",
     url: "/contact",
     type: "website",
   },
@@ -43,7 +43,7 @@ export default async function Contact({
   setRequestLocale(locale as Locale);
   return (
     <>
-      <PageSchemas path="/contact" />
+      <PageSchemas path="/contact" locale={locale} />
       <Breadcrumbs path="/contact" />
       <ContactPage />
       <FaqSection

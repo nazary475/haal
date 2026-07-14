@@ -45,7 +45,7 @@ export default async function About({
   setRequestLocale(locale as Locale);
   return (
     <>
-      <PageSchemas path="/about" />
+      <PageSchemas path="/about" locale={locale} />
       <Breadcrumbs path="/about" />
       <AboutPage />
       <FaqSection

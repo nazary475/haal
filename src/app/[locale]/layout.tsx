@@ -138,13 +138,16 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider locale={currentLocale} messages={messages}>
-      <div className="flex min-h-screen flex-col bg-background">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </div>
-      <Toaster />
-    </NextIntlClientProvider>
+    <>
+      <JsonLd locale={currentLocale} />
+      <NextIntlClientProvider locale={currentLocale} messages={messages}>
+        <div className="flex min-h-screen flex-col bg-background">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
+        <Toaster />
+      </NextIntlClientProvider>
+    </>
   );
 }

@@ -49,7 +49,7 @@ export default async function Network({
   setRequestLocale(locale as Locale);
   return (
     <>
-      <PageSchemas path="/network" />
+      <PageSchemas path="/network" locale={locale} />
       <Breadcrumbs path="/network" />
       <NetworkPage />
       <FaqSection

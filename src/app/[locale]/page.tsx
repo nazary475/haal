@@ -5,6 +5,7 @@ import { PageSchemas } from "@/components/site/json-ld";
 import { FaqSection } from "@/components/site/faq-section";
 import { RelatedLinks } from "@/components/site/related-links";
 import { FAQS } from "@/lib/seo";
+import { getFAQsByLocale } from "@/lib/seo-faqs";
 import { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
@@ -29,13 +30,14 @@ export default async function Home({
 }) {
   const { locale } = await params;
   setRequestLocale(locale as Locale);
+  const localeFAQs = getFAQsByLocale(locale);
 
   return (
     <>
-      <PageSchemas path="/" />
+      <PageSchemas path="/" locale={locale} />
       <HomePage />
       <FaqSection
-        faqs={FAQS.home}
+        faqs={localeFAQs.home || FAQS.home}
         eyebrow="FAQ"
         title="Frequently asked questions"
         intro="Answers to the questions we hear most often — from organizations evaluating AI engineering partners."

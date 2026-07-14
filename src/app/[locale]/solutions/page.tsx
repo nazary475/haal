@@ -53,7 +53,7 @@ export default async function Solutions({
 
   return (
     <>
-      <PageSchemas path="/solutions" />
+      <PageSchemas path="/solutions" locale={locale} />
       <Breadcrumbs path="/solutions" />
       <SolutionsPage />
       <GlossarySection />

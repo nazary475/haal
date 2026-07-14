@@ -1,155 +1,13 @@
 /**
- * Centralized SEO + GEO data for Haal Lab.
- *
- * Used by:
- * - JSON-LD structured data (json-ld.tsx)
- * - Page metadata (layout.tsx, individual page.tsx files)
- * - Visible FAQ sections (faq-section.tsx)
- * - Breadcrumbs (breadcrumbs.tsx)
- * - llms.txt (generated from this data)
- *
- * GEO = Generative Engine Optimization. Optimizing for AI chatbots
- * (ChatGPT, Perplexity, Claude, Gemini) by providing citable,
- * question-answer content and explicit structured data.
+ * Multilingual FAQ content for all pages.
+ * Used for both visible Q&A sections and FAQPage JSON-LD schema.
  */
 
-export const SITE = {
-  name: "Haal Lab",
-  domain: "haal-lab.solutions",
-  url: "https://haal-lab.solutions",
-  email: "hussain.nazary@haal-lab.solutions",
-  github: "https://github.com/haal-lab",
-  linkedin: "https://www.linkedin.com/company/haal-lab",
-  twitter: "@haallab",
-  foundingDate: "2024",
-  description:
-    "Haal Lab is a deep-tech AI engineering company building private, intelligent, and reliable AI systems — including large language model applications, retrieval systems, automation platforms, and private AI infrastructure.",
-  shortDescription:
-    "Deep-tech AI engineering company. Private AI systems, LLM applications, RAG, and AI infrastructure.",
-} as const;
-
-export const NAV: { label: string; href: string; description: string }[] = [
-  {
-    label: "Solutions",
-    href: "/solutions",
-    description:
-      "Four AI capabilities: Local AI Systems, LLM Applications, Knowledge Intelligence, and AI Infrastructure.",
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-    description:
-      "Technical case studies including GGUF Loader (offline LLM platform) and Legal Intelligence System (semantic retrieval).",
-  },
-  {
-    label: "Research",
-    href: "/research",
-    description:
-      "Technical articles and experiments on local LLM inference, RAG, reranking, BGE-M3, evaluation CI, and agent orchestration.",
-  },
-  {
-    label: "Network",
-    href: "/network",
-    description:
-      "Technology, infrastructure, cloud, and research partners — plus our advisory board of AI, security, and privacy experts.",
-  },
-  {
-    label: "About",
-    href: "/about",
-    description:
-      "Haal Lab is an AI engineering company focused on intelligent software systems using modern ML and LLM technologies.",
-  },
-  {
-    label: "Pricing",
-    href: "/pricing",
-    description:
-      "Four pricing tiers for AI engineering: Explorer, Professional, Enterprise, and Research & Academic.",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-    description:
-      "Start a conversation with Haal Lab about your AI project. We respond within two business days.",
-  },
-];
-
-export const SERVICES = [
-  "Custom AI Development",
-  "Retrieval-Augmented Generation Systems",
-  "LLM Integration",
-  "AI Automation",
-  "Private AI Deployment",
-  "AI Consulting",
-] as const;
-
-export const CAPABILITIES = [
-  {
-    name: "Local AI Systems",
-    description:
-      "Private AI solutions that run securely on your infrastructure — on-prem, air-gapped, or on workstations.",
-  },
-  {
-    name: "LLM Applications",
-    description:
-      "Custom AI assistants, agents, and intelligent automation systems built with evaluation and observability.",
-  },
-  {
-    name: "Knowledge Intelligence",
-    description:
-      "Advanced RAG systems, semantic search, and document intelligence with hybrid retrieval and reranking.",
-  },
-  {
-    name: "AI Infrastructure",
-    description:
-      "Deployment, optimization, and scalable AI engineering — model serving, GPU tuning, and observability.",
-  },
-] as const;
-
-/** Breadcrumb definitions per route. */
-export const BREADCRUMBS: Record<string, { name: string; path: string }[]> = {
-  "/": [{ name: "Home", path: "" }],
-  "/solutions": [
-    { name: "Home", path: "" },
-    { name: "Solutions", path: "/solutions" },
-  ],
-  "/projects": [
-    { name: "Home", path: "" },
-    { name: "Projects", path: "/projects" },
-  ],
-  "/research": [
-    { name: "Home", path: "" },
-    { name: "Research", path: "/research" },
-  ],
-  "/network": [
-    { name: "Home", path: "" },
-    { name: "Network", path: "/network" },
-  ],
-  "/about": [
-    { name: "Home", path: "" },
-    { name: "About", path: "/about" },
-  ],
-  "/contact": [
-    { name: "Home", path: "" },
-    { name: "Contact", path: "/contact" },
-  ],
-  "/pricing": [
-    { name: "Home", path: "" },
-    { name: "Pricing", path: "/pricing" },
-  ],
-};
-
-/**
- * FAQ content — used both as visible Q&A on the site AND as FAQPage JSON-LD.
- *
- * These questions are written to match the natural-language queries that
- * users type into AI chatbots ("What companies build private AI?",
- * "How to deploy LLMs locally?", etc.) — so that ChatGPT, Perplexity,
- * Claude, and Gemini can retrieve and cite the answers.
- */
 export type FAQ = { question: string; answer: string };
 export type LocaleFAQs = Record<string, FAQ[]>;
 
-export const FAQS: LocaleFAQs = {
+/** English FAQs */
+export const FAQS_EN: Record<string, FAQ[]> = {
   home: [
     {
       question: "What does Haal Lab do?",
@@ -333,42 +191,190 @@ export const FAQS: LocaleFAQs = {
   ],
 };
 
-/** Glossary of AI terms — used for inline definitions (GEO-friendly). */
-export const GLOSSARY: Record<string, string> = {
-  RAG: "Retrieval-Augmented Generation — an architecture that grounds LLM responses in your own documents by retrieving relevant passages and feeding them as context.",
-  LLM: "Large Language Model — a neural network trained on large text corpora that generates text, answers questions, and performs natural language tasks.",
-  GGUF: "GPT-Generated Unified Format — a file format for storing quantized language models so they can run efficiently on consumer hardware.",
-  "BGE-M3": "A multilingual embedding model that produces dense, sparse, and ColBERT-style representations in a single pass, used for semantic search.",
-  Reranking: "A second-stage retrieval step that uses a more expensive model (usually a cross-encoder) to re-score and reorder the top results for higher precision.",
-  "Vector Database": "A database optimized for storing and querying high-dimensional vectors (embeddings), used for semantic search and RAG.",
-  "Open-weight model": "A language model whose weights are publicly available for download and local execution — such as Llama, Mistral, or Qwen.",
-  "Air-gapped": "A deployment with no network connection to the outside world — used in regulated environments where data cannot leave the premises.",
-  "Fine-tuning": "The process of further training a pre-trained model on domain-specific data to specialize its behavior.",
-  Embedding: "A numerical vector representation of text that captures semantic meaning, enabling similarity search.",
-  "Cross-encoder": "A model that takes a query and a document together and outputs a single relevance score — slower than bi-encoder retrieval but more accurate.",
-  "Agent orchestration": "Coordinating multiple LLM calls, tool uses, and reasoning steps to accomplish a complex task autonomously.",
+/** German FAQs */
+export const FAQS_DE: Record<string, FAQ[]> = {
+  home: [
+    {
+      question: "Was macht Haal Lab?",
+      answer:
+        "Haal Lab ist ein Deep-Tech-KI-Engineering-Unternehmen, das private, intelligente und zuverlässige KI-Systeme entwickelt. Wir bieten vier Kompetenzbereiche: Lokale KI-Systeme (private On-Prem-Inferenz), LLM-Anwendungen (Assistenten und Agenten), Wissensintelligenz (RAG und semantische Suche) und KI-Infrastruktur (Bereitstellung und Optimierung).",
+    },
+    {
+      question: "Für wen ist Haal Lab geeignet?",
+      answer:
+        "Haal Lab arbeitet mit Unternehmen, Startups, Forschern und Organisationen zusammen, die maßgeschneiderte KI-Lösungen benötigen – insbesondere solche mit Datenschutz-, Compliance- oder Datensouveränitätsanforderungen, die generische Cloud-KI-Dienste ausschließen.",
+    },
+    {
+      question: "Erstellt Haal Lab private oder On-Premises-KI?",
+      answer:
+        "Ja. Privacy-First-Architektur ist eines unserer Kernprinzipien. Wir entwickeln KI-Systeme, die vollständig auf Ihrer Infrastruktur laufen – auf Workstations, On-Prem-Servern oder Air-Gapped-Clustern – unter Verwendung von Open-Weight-Modellen, sodass Ihre Daten niemals Ihre Umgebung verlassen.",
+    },
+    {
+      question: "Welche Technologien verwendet Haal Lab?",
+      answer:
+        "Unser Stack umfasst Open-Weight-LLMs, llama.cpp, vLLM, Triton, GGUF-Format, BGE-M3-Embeddings, Vektordatenbanken (Qdrant, Postgres mit pgvector), LangGraph für Agenten-Orchestrierung, Kubernetes und CUDA für GPU-Beschleunigung. Wir setzen standardmäßig auf Open-Source – kein Platform-Lock-in.",
+    },
+    {
+      question: "Wie unterscheidet sich Haal Lab von einer generischen KI-Agentur?",
+      answer:
+        "Haal Lab behandelt KI als Ingenieurdisziplin, nicht als Demo-Fabrik. Jedes System, das wir ausliefern, umfasst Evaluierungs-Harnesses, Observability und Dokumentation. Wir bauen auf Open-Weight-Modellen und Open-Source-Infrastruktur auf, sodass Sie das System, die Weights und die Daten besitzen – kein Platform-Lock-in.",
+    },
+    {
+      question: "Wie engagiere ich Haal Lab?",
+      answer:
+        "Wir arbeiten in vier Phasen: Discovery (Problem verstehen), Architecture (System End-to-End entwerfen), Build (Engineering in nachweisbaren Schritten) und Deploy (in Ihre Umgebung mit Runbooks und Observability ausliefern). Kontaktieren Sie uns unter hussain.nazary@haal-lab.solutions.",
+    },
+  ],
+  solutions: [],
+  about: [],
+  contact: [],
+  projects: [],
+  research: [],
+  network: [],
+  pricing: [],
 };
 
-/** Engagement model — also used for HowTo schema. */
-export const ENGAGEMENT_STEPS = [
-  {
-    name: "Discovery",
-    description:
-      "We start with the problem, not the model. A focused engagement to understand constraints, data, success criteria, and the production environment the system will live in.",
-  },
-  {
-    name: "Architecture",
-    description:
-      "We design the system end-to-end — model choices, retrieval strategy, infrastructure, evaluation harness — and pressure-test it against your real workloads before committing.",
-  },
-  {
-    name: "Build",
-    description:
-      "Engineering in small, demonstrable increments. You see working software early and often, with evaluation reports attached to every milestone.",
-  },
-  {
-    name: "Deploy",
-    description:
-      "We ship to your environment — cloud, on-prem, or air-gapped — with the observability, runbooks, and documentation your team needs to operate it confidently.",
-  },
-] as const;
+/** French FAQs */
+export const FAQS_FR: Record<string, FAQ[]> = {
+  home: [
+    {
+      question: "Que fait Haal Lab ?",
+      answer:
+        "Haal Lab est une entreprise d'ingénierie IA deep-tech qui construit des systèmes d'IA privés, intelligents et fiables. Nous offrons quatre capacités : Systèmes d'IA locaux (inférence privée sur site), Applications LLM (assistants et agents), Intelligence de la connaissance (RAG et recherche sémantique) et Infrastructure IA (déploiement et optimisation).",
+    },
+    {
+      question: "À qui s'adresse Haal Lab ?",
+      answer:
+        "Haal Lab travaille avec des entreprises, des startups, des chercheurs et des organisations qui ont besoin de solutions IA personnalisées – en particulier celles ayant des exigences en matière de confidentialité, de conformité ou de souveraineté des données qui excluent les services IA cloud génériques.",
+    },
+    {
+      question: "Haal Lab construit-il de l'IA privée ou sur site ?",
+      answer:
+        "Oui. L'architecture privacy-first est l'un de nos principes fondamentaux. Nous construisons des systèmes d'IA qui s'exécutent entièrement sur votre infrastructure – sur des postes de travail, des serveurs sur site ou des clusters isolés – en utilisant des modèles à poids ouverts afin que vos données ne quittent jamais votre environnement.",
+    },
+    {
+      question: "Quelles technologies Haal Lab utilise-t-il ?",
+      answer:
+        "Notre stack comprend des LLM à poids ouverts, llama.cpp, vLLM, Triton, le format GGUF, les embeddings BGE-M3, des bases de données vectorielles (Qdrant, Postgres avec pgvector), LangGraph pour l'orchestration d'agents, Kubernetes et CUDA pour l'accélération GPU. Nous construisons sur l'open-source par défaut – pas de verrouillage de plateforme.",
+    },
+    {
+      question: "En quoi Haal Lab diffère-t-il d'une agence IA générique ?",
+      answer:
+        "Haal Lab traite l'IA comme une discipline d'ingénierie, pas comme une usine à démos. Chaque système que nous livrons comprend des harnais d'évaluation, de l'observabilité et de la documentation. Nous construisons sur des modèles à poids ouverts et une infrastructure open-source afin que vous possédiez le système, les poids et les données – pas de verrouillage de plateforme.",
+    },
+    {
+      question: "Comment puis-je engager Haal Lab ?",
+      answer:
+        "Nous travaillons en quatre étapes : Discovery (comprendre le problème), Architecture (concevoir le système de bout en bout), Build (ingénierie par incréments démontrables) et Deploy (livrer dans votre environnement avec runbooks et observabilité). Contactez-nous à hussain.nazary@haal-lab.solutions.",
+    },
+  ],
+  solutions: [],
+  about: [],
+  contact: [],
+  projects: [],
+  research: [],
+  network: [],
+  pricing: [],
+};
+
+/** Spanish FAQs */
+export const FAQS_ES: Record<string, FAQ[]> = {
+  home: [
+    {
+      question: "¿Qué hace Haal Lab?",
+      answer:
+        "Haal Lab es una empresa de ingeniería de IA de alta tecnología que construye sistemas de IA privados, inteligentes y confiables. Ofrecemos cuatro capacidades: Sistemas de IA locales (inferencia privada en las instalaciones), Aplicaciones LLM (asistentes y agentes), Inteligencia de conocimiento (RAG y búsqueda semántica) e Infraestructura de IA (implementación y optimización).",
+    },
+    {
+      question: "¿Para quién es Haal Lab?",
+      answer:
+        "Haal Lab trabaja con empresas, startups, investigadores y organizaciones que necesitan soluciones de IA personalizadas, especialmente aquellas con requisitos de privacidad, cumplimiento o soberanía de datos que descartan los servicios de IA en la nube genéricos.",
+    },
+    {
+      question: "¿Haal Lab construye IA privada o en las instalaciones?",
+      answer:
+        "Sí. La arquitectura orientada a la privacidad es uno de nuestros principios fundamentales. Construimos sistemas de IA que se ejecutan completamente en su infraestructura: en estaciones de trabajo, servidores locales o clústeres aislados, utilizando modelos de pesos abiertos para que sus datos nunca salgan de su entorno.",
+    },
+    {
+      question: "¿Qué tecnologías utiliza Haal Lab?",
+      answer:
+        "Nuestro stack incluye LLM de pesos abiertos, llama.cpp, vLLM, Triton, formato GGUF, embeddings BGE-M3, bases de datos vectoriales (Qdrant, Postgres con pgvector), LangGraph para orquestación de agentes, Kubernetes y CUDA para aceleración GPU. Construimos sobre código abierto por defecto: sin bloqueo de plataforma.",
+    },
+    {
+      question: "¿En qué se diferencia Haal Lab de una agencia de IA genérica?",
+      answer:
+        "Haal Lab trata la IA como una disciplina de ingeniería, no como una fábrica de demos. Cada sistema que entregamos incluye arneses de evaluación, observabilidad y documentación. Construimos sobre modelos de pesos abiertos e infraestructura de código abierto para que usted posea el sistema, los pesos y los datos: sin bloqueo de plataforma.",
+    },
+    {
+      question: "¿Cómo puedo contratar a Haal Lab?",
+      answer:
+        "Trabajamos en cuatro etapas: Discovery (entender el problema), Architecture (diseñar el sistema de extremo a extremo), Build (ingeniería en incrementos demostrables) y Deploy (entregar en su entorno con runbooks y observabilidad). Contáctenos en hussain.nazary@haal-lab.solutions.",
+    },
+  ],
+  solutions: [],
+  about: [],
+  contact: [],
+  projects: [],
+  research: [],
+  network: [],
+  pricing: [],
+};
+
+/** Italian FAQs */
+export const FAQS_IT: Record<string, FAQ[]> = {
+  home: [
+    {
+      question: "Cosa fa Haal Lab?",
+      answer:
+        "Haal Lab è un'azienda di ingegneria IA deep-tech che costruisce sistemi di IA privati, intelligenti e affidabili. Offriamo quattro capacità: Sistemi di IA locali (inferenza privata on-premise), Applicazioni LLM (assistenti e agenti), Intelligenza della conoscenza (RAG e ricerca semantica) e Infrastruttura IA (distribuzione e ottimizzazione).",
+    },
+    {
+      question: "Per chi è Haal Lab?",
+      answer:
+        "Haal Lab lavora con aziende, startup, ricercatori e organizzazioni che necessitano di soluzioni IA personalizzate, in particolare quelle con requisiti di privacy, conformità o sovranità dei dati che escludono i servizi IA cloud generici.",
+    },
+    {
+      question: "Haal Lab costruisce IA privata o on-premise?",
+      answer:
+        "Sì. L'architettura privacy-first è uno dei nostri principi fondamentali. Costruiamo sistemi di IA che funzionano interamente sulla vostra infrastruttura: su workstation, server on-premise o cluster isolati, utilizzando modelli a pesi aperti in modo che i vostri dati non lascino mai il vostro ambiente.",
+    },
+    {
+      question: "Quali tecnologie utilizza Haal Lab?",
+      answer:
+        "Il nostro stack include LLM a pesi aperti, llama.cpp, vLLM, Triton, formato GGUF, embedding BGE-M3, database vettoriali (Qdrant, Postgres con pgvector), LangGraph per l'orchestrazione degli agenti, Kubernetes e CUDA per l'accelerazione GPU. Costruiamo su open-source per impostazione predefinita: nessun lock-in di piattaforma.",
+    },
+    {
+      question: "In che modo Haal Lab è diverso da un'agenzia IA generica?",
+      answer:
+        "Haal Lab tratta l'IA come una disciplina ingegneristica, non come una fabbrica di demo. Ogni sistema che consegniamo include harness di valutazione, osservabilità e documentazione. Costruiamo su modelli a pesi aperti e infrastruttura open-source in modo che tu possieda il sistema, i pesi e i dati: nessun lock-in di piattaforma.",
+    },
+    {
+      question: "Come posso coinvolgere Haal Lab?",
+      answer:
+        "Lavoriamo in quattro fasi: Discovery (comprendere il problema), Architecture (progettare il sistema end-to-end), Build (ingegneria in incrementi dimostrabili) e Deploy (consegnare nel vostro ambiente con runbook e osservabilità). Contattateci all'indirizzo hussain.nazary@haal-lab.solutions.",
+    },
+  ],
+  solutions: [],
+  about: [],
+  contact: [],
+  projects: [],
+  research: [],
+  network: [],
+  pricing: [],
+};
+
+/** Get FAQs by locale */
+export function getFAQsByLocale(locale: string): Record<string, FAQ[]> {
+  switch (locale) {
+    case "de":
+      return FAQS_DE;
+    case "fr":
+      return FAQS_FR;
+    case "es":
+      return FAQS_ES;
+    case "it":
+      return FAQS_IT;
+    default:
+      return FAQS_EN;
+  }
+}

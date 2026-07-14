@@ -190,15 +190,29 @@ const ADDONS: { name: string; description: string; price: string }[] = [
 export function PricingPage() {
   return (
     <>
+      {/* Page Header */}
+      <header className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
+        <div className="pointer-events-none absolute inset-0 hl-radial-glow opacity-70" />
+        <div className="pointer-events-none absolute inset-0 hl-grid-bg opacity-40" />
+        <div className="hl-container hl-section-pad relative">
+          <Reveal>
+            <Eyebrow>Pricing</Eyebrow>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <SectionHeading as="h1" className="mt-5 max-w-4xl">
+              Packages built for real AI needs
+            </SectionHeading>
+          </Reveal>
+          <Reveal delay={0.16}>
+            <Lead className="mt-5">
+              Five tiers designed for solo founders, startups, businesses, enterprises, and research institutions. Every package delivers a working system — not a slide deck.
+            </Lead>
+          </Reveal>
+        </div>
+      </header>
+
       {/* ── Tier cards ── */}
       <SectionShell id="pricing-tiers">
-        <SectionHeader
-          eyebrow="Pricing"
-          heading="Packages built for real AI needs"
-          lead="Five tiers designed for solo founders, startups, businesses, enterprises, and research institutions. Every package delivers a working system — not a slide deck."
-          align="center"
-        />
-
         <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-5">
           {TIERS.map((tier, i) => (
             <Reveal key={tier.id} delay={i * 0.08}>
@@ -376,10 +390,10 @@ export function PricingPage() {
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                   <a
-                    href="mailto:hello@haal-lab.solutions"
+                    href="mailto:hussain.nazary@haal-lab.solutions"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-hl-border px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-hl-cyan/40 hover:text-hl-cyan"
                   >
-                    hello@haal-lab.solutions
+                    hussain.nazary@haal-lab.solutions
                   </a>
                 </div>
               </div>

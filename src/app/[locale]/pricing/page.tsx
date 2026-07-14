@@ -46,7 +46,7 @@ export default async function Pricing({
 
   return (
     <>
-      <PageSchemas path="/pricing" />
+      <PageSchemas path="/pricing" locale={locale} />
       <Breadcrumbs path="/pricing" />
       <PricingPage />
       <FaqSection

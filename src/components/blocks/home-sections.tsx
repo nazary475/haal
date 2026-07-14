@@ -458,10 +458,10 @@ export function ContactCtaSection() {
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <a
-                  href="mailto:hello@haal-lab.solutions"
+                  href="mailto:hussain.nazary@haal-lab.solutions"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-hl-border px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-hl-cyan/40 hover:text-hl-cyan"
                 >
-                  hello@haal-lab.solutions
+                  hussain.nazary@haal-lab.solutions
                 </a>
               </div>
             </div>

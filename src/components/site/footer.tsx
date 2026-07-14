@@ -35,7 +35,7 @@ export function Footer() {
               <SocialLink href="https://www.linkedin.com/company/haal-lab" label="LinkedIn">
                 <Linkedin className="h-4 w-4" />
               </SocialLink>
-              <SocialLink href="mailto:hello@haal-lab.solutions" label="Email">
+              <SocialLink href="mailto:hussain.nazary@haal-lab.solutions" label="Email">
                 <Mail className="h-4 w-4" />
               </SocialLink>
             </div>
@@ -66,10 +66,10 @@ export function Footer() {
               {t("getInTouch")}
             </h2>
             <a
-              href="mailto:hello@haal-lab.solutions"
+              href="mailto:hussain.nazary@haal-lab.solutions"
               className="group inline-flex items-center gap-1 text-sm text-foreground hover:text-hl-cyan"
             >
-              hello@haal-lab.solutions
+              hussain.nazary@haal-lab.solutions
               <ArrowUpRight className="h-3 w-3 opacity-60 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <p className="mt-3 text-xs text-hl-muted">haal-lab.solutions</p>
