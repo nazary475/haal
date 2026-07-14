@@ -11,11 +11,6 @@ import { routing, locales, type Locale } from "@/i18n/routing";
 
 const siteUrl = SITE.url;
 
-// Enable static rendering for all locales
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
 /** Map our locales to OpenGraph locale codes (language_REGION). */
 const ogLocales: Record<Locale, string> = {
   en: "en_US",
@@ -24,6 +19,11 @@ const ogLocales: Record<Locale, string> = {
   es: "es_ES",
   it: "it_IT",
 };
+
+/** Generate static params for all locales — required for static export. */
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 /** Generate metadata per locale — includes hreflang alternates for SEO. */
 export async function generateMetadata({

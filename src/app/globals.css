@@ -53,92 +53,101 @@
 :root {
   --radius: 0.75rem;
 
-  /* Deep-tech dark identity — locked to brand regardless of system theme */
-  --background: #080B12;
-  --foreground: #E6EAF2;
+  /* ══ White + Blue 60-30-10 Theme ══
+     60% — White #FFFFFF (base background, dominant)
+     30% — Deep blue #0950CD (text, surfaces, structure)
+     10% — Vivid blue #2563EB (accents, CTAs, highlights)
+     Text uses near-black blue #0A1A3A for maximum readability and impact. */
 
-  --card: #0E131D;
-  --card-foreground: #E6EAF2;
+  --background: #FFFFFF;
+  --foreground: #0A1A3A;
 
-  --popover: #0E131D;
-  --popover-foreground: #E6EAF2;
+  --card: #F0F5FF;
+  --card-foreground: #0A1A3A;
 
-  --primary: #E6EAF2;
-  --primary-foreground: #080B12;
+  --popover: #F0F5FF;
+  --popover-foreground: #0A1A3A;
 
-  --secondary: #11161F;
-  --secondary-foreground: #E6EAF2;
+  --primary: #0A1A3A;
+  --primary-foreground: #FFFFFF;
 
-  --muted: #11161F;
-  --muted-foreground: #8A93A6;
+  --secondary: #E0EAFC;
+  --secondary-foreground: #0A1A3A;
 
-  --accent: #00E0FF;
-  --accent-foreground: #04141A;
+  --muted: #E0EAFC;
+  --muted-foreground: #2D4A7A;
 
-  --destructive: #F04A4A;
+  --accent: #2563EB;
+  --accent-foreground: #FFFFFF;
 
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.10);
-  --ring: #00E0FF;
+  --destructive: #DC2626;
+
+  --border: #CBD9EF;
+  --input: #CBD9EF;
+  --ring: #2563EB;
 
   /* Brand tokens */
-  --hl-cyan: #00E0FF;
-  --hl-cyan-soft: rgba(0, 224, 255, 0.16);
-  --hl-ink: #080B12;
-  --hl-surface: #0E131D;
-  --hl-surface-2: #11161F;
-  --hl-border: rgba(255, 255, 255, 0.08);
-  --hl-muted: #8A93A6;
+  --hl-cyan: #2563EB;
+  --hl-cyan-soft: rgba(37, 99, 235, 0.10);
+  --hl-blue: #0950CD;
+  --hl-aqua: #4AF3F8;
+  --hl-deep: #0950CD;
+  --hl-green: #29C4F8;
+  --hl-ink: #FFFFFF;
+  --hl-surface: #F0F5FF;
+  --hl-surface-2: #E0EAFC;
+  --hl-border: #CBD9EF;
+  --hl-muted: #2D4A7A;
 
-  --chart-1: #00E0FF;
-  --chart-2: #6EA8FF;
-  --chart-3: #B8B0FF;
-  --chart-4: #4FD8C4;
-  --chart-5: #F2C94C;
+  --chart-1: #2563EB;
+  --chart-2: #0950CD;
+  --chart-3: #4AF3F8;
+  --chart-4: #29C4F8;
+  --chart-5: #0950CD;
 
-  --sidebar: #0E131D;
-  --sidebar-foreground: #E6EAF2;
-  --sidebar-primary: #00E0FF;
-  --sidebar-primary-foreground: #04141A;
-  --sidebar-accent: #11161F;
-  --sidebar-accent-foreground: #E6EAF2;
-  --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #00E0FF;
+  --sidebar: #F0F5FF;
+  --sidebar-foreground: #0950CD;
+  --sidebar-primary: #2563EB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E0EAFC;
+  --sidebar-accent-foreground: #0950CD;
+  --sidebar-border: #CBD9EF;
+  --sidebar-ring: #2563EB;
 }
 
 .dark {
-  /* Same palette — dark is the only brand direction */
-  --background: #080B12;
-  --foreground: #E6EAF2;
-  --card: #0E131D;
-  --card-foreground: #E6EAF2;
-  --popover: #0E131D;
-  --popover-foreground: #E6EAF2;
-  --primary: #E6EAF2;
-  --primary-foreground: #080B12;
-  --secondary: #11161F;
-  --secondary-foreground: #E6EAF2;
-  --muted: #11161F;
-  --muted-foreground: #8A93A6;
-  --accent: #00E0FF;
-  --accent-foreground: #04141A;
-  --destructive: #F04A4A;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.10);
-  --ring: #00E0FF;
-  --chart-1: #00E0FF;
-  --chart-2: #6EA8FF;
-  --chart-3: #B8B0FF;
-  --chart-4: #4FD8C4;
-  --chart-5: #F2C94C;
-  --sidebar: #0E131D;
-  --sidebar-foreground: #E6EAF2;
-  --sidebar-primary: #00E0FF;
-  --sidebar-primary-foreground: #04141A;
-  --sidebar-accent: #11161F;
-  --sidebar-accent-foreground: #E6EAF2;
-  --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #00E0FF;
+  /* White + Blue 60-30-10 — same palette, light is the only brand direction */
+  --background: #FFFFFF;
+  --foreground: #0A1A3A;
+  --card: #F0F5FF;
+  --card-foreground: #0A1A3A;
+  --popover: #F0F5FF;
+  --popover-foreground: #0A1A3A;
+  --primary: #0A1A3A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E0EAFC;
+  --secondary-foreground: #0A1A3A;
+  --muted: #E0EAFC;
+  --muted-foreground: #2D4A7A;
+  --accent: #2563EB;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --border: #CBD9EF;
+  --input: #CBD9EF;
+  --ring: #2563EB;
+  --chart-1: #2563EB;
+  --chart-2: #0950CD;
+  --chart-3: #4AF3F8;
+  --chart-4: #29C4F8;
+  --chart-5: #0950CD;
+  --sidebar: #F0F5FF;
+  --sidebar-foreground: #0950CD;
+  --sidebar-primary: #2563EB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E0EAFC;
+  --sidebar-accent-foreground: #0950CD;
+  --sidebar-border: #CBD9EF;
+  --sidebar-ring: #2563EB;
 }
 
 @layer base {
@@ -156,11 +165,30 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
+  }
+
+  /* Stronger emphasis for important text — darker and bolder */
+  strong, b {
+    color: #0A1A3A;
+    font-weight: 700;
+  }
+
+  /* Emphasis utility — for highlighting key phrases within paragraphs */
+  .hl-emph {
+    color: #0A1A3A;
+    font-weight: 700;
+  }
+
+  /* Accent emphasis — vivid blue bold for critical terms */
+  .hl-emph-accent {
+    color: #2563EB;
+    font-weight: 700;
   }
 
   ::selection {
-    background: rgba(0, 224, 255, 0.25);
-    color: #ffffff;
+    background: rgba(37, 99, 235, 0.15);
+    color: #0A1A3A;
   }
 
   /* Custom scrollbar */
@@ -169,15 +197,15 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #080B12;
+    background: #F0F5FF;
   }
   ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.08);
     border-radius: 8px;
-    border: 2px solid #080B12;
+    border: 2px solid #FFFFFF;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 224, 255, 0.4);
+    background: rgba(37, 99, 235, 0.4);
   }
 }
 
@@ -185,8 +213,8 @@
   /* Subtle grid background */
   .hl-grid-bg {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      linear-gradient(rgba(9, 80, 205, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(9, 80, 205, 0.04) 1px, transparent 1px);
     background-size: 56px 56px;
     background-position: -1px -1px;
   }
@@ -211,7 +239,7 @@
   }
 
   .hl-text-gradient {
-    background: linear-gradient(180deg, #FFFFFF 0%, #B6C3D6 100%);
+    background: linear-gradient(180deg, #0A1A3A 0%, #0950CD 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -219,7 +247,7 @@
   }
 
   .hl-text-cyan-gradient {
-    background: linear-gradient(90deg, #00E0FF 0%, #6EA8FF 100%);
+    background: linear-gradient(90deg, #2563EB 0%, #0950CD 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -10,6 +10,7 @@
     "network": "Netzwerk",
     "about": "Über uns",
     "contact": "Kontakt",
+    "pricing": "Preise",
     "exploreSolutions": "Lösungen entdecken",
     "toggleNav": "Navigation umschalten"
   },
@@ -132,6 +133,12 @@
       "title": "Erzählen Sie uns, was Sie bauen möchten.",
       "lead": "Wir antworten auf jede ernsthafte Anfrage mit einer konkreten technischen Perspektive — normalerweise innerhalb von zwei Werktagen. Je mehr Kontext Sie teilen, desto nützlicher wird unsere Antwort.",
       "meta": "haal-lab.solutions / kontakt"
+    },
+    "pricing": {
+      "eyebrow": "Preise",
+      "title": "Transparente Preise für echte KI-Systeme.",
+      "lead": "Vier Pakete für Startups, Unternehmen, Großunternehmen und Forschungseinrichtungen. Jedes Paket liefert ein funktionierendes System — kein bloßes Präsentationsdeck.",
+      "meta": "haal-lab.solutions / preise"
     }
   }
 }

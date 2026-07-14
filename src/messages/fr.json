@@ -10,6 +10,7 @@
     "network": "Réseau",
     "about": "À propos",
     "contact": "Contact",
+    "pricing": "Tarifs",
     "exploreSolutions": "Explorer les solutions",
     "toggleNav": "Basculer la navigation"
   },
@@ -132,6 +133,12 @@
       "title": "Dites-nous ce que vous essayez de construire.",
       "lead": "Nous répondons à chaque demande sérieuse avec une perspective technique concrète — généralement sous deux jours ouvrables. Plus vous partagez de contexte, plus notre réponse sera utile.",
       "meta": "haal-lab.solutions / contact"
+    },
+    "pricing": {
+      "eyebrow": "Tarifs",
+      "title": "Des prix transparents pour de vrais systèmes IA.",
+      "lead": "Quatre forfaits conçus pour les startups, les entreprises, les grandes entreprises et les institutions de recherche. Chaque niveau offre un système fonctionnel — pas un jeu de diapositives.",
+      "meta": "haal-lab.solutions / tarifs"
     }
   }
 }

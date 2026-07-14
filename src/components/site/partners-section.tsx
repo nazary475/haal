@@ -65,9 +65,20 @@ export function PartnersSection({
               aria-label={`${partner.name} — ${partner.category} partner (opens in new tab)`}
             >
               <div className="flex w-full items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-hl-border bg-hl-surface-2 font-mono text-sm font-bold tracking-tight text-foreground/80 transition-colors group-hover:border-hl-cyan/40 group-hover:text-hl-cyan">
-                  {partner.monogram}
-                </div>
+                {partner.logoUrl ? (
+                  <div className="flex h-12 w-20 items-center justify-center rounded-lg border border-hl-border bg-white p-2 transition-colors group-hover:border-hl-cyan/40">
+                    <img
+                      src={partner.logoUrl}
+                      alt={`${partner.name} logo`}
+                      className="max-h-full max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-hl-border bg-hl-surface-2 font-mono text-sm font-bold tracking-tight text-foreground/80 transition-colors group-hover:border-hl-cyan/40 group-hover:text-hl-cyan">
+                    {partner.monogram}
+                  </div>
+                )}
                 <span className="font-mono text-[10px] uppercase tracking-wider text-hl-muted/60">
                   {partner.category}
                 </span>

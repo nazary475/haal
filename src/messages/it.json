@@ -10,6 +10,7 @@
     "network": "Rete",
     "about": "Chi siamo",
     "contact": "Contatti",
+    "pricing": "Prezzi",
     "exploreSolutions": "Esplora soluzioni",
     "toggleNav": "Toggle navigazione"
   },
@@ -132,6 +133,12 @@
       "title": "Raccontaci cosa stai cercando di costruire.",
       "lead": "Rispondiamo a ogni seria richiesta con una prospettiva tecnica concreta — di solito entro due giorni lavorativi. Più contesto condividi, più utile sarà la nostra risposta.",
       "meta": "haal-lab.solutions / contatti"
+    },
+    "pricing": {
+      "eyebrow": "Prezzi",
+      "title": "Prezzi trasparenti per veri sistemi di intelligenza artificiale.",
+      "lead": "Quattro pacchetti progettati per startup, aziende, grandi imprese e istituti di ricerca. Ogni livello fornisce un sistema funzionante — non una presentazione di diapositive.",
+      "meta": "haal-lab.solutions / prezzi"
     }
   }
 }

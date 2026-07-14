@@ -7,6 +7,7 @@ import {
   MessagesSquare,
   Database,
   ServerCog,
+  Brain,
   ShieldCheck,
   FlaskConical,
   Layers,
@@ -25,38 +26,45 @@ import {
   SectionShell,
   SectionHeader,
 } from "@/components/blocks/primitives";
+import { ModelSchematic } from "@/components/visuals/model-schematic";
 
 /* ---------------- Solutions section ---------------- */
 
-const SOLUTIONS: {
+type Solution = {
   icon: LucideIcon;
   title: string;
   description: string;
   bullets: string[];
-}[] = [
-  {
-    icon: Cpu,
-    title: "Local AI Systems",
-    description: "Private AI solutions that run securely on your infrastructure.",
-    bullets: ["On-prem inference", "Air-gapped deployment", "Data sovereignty"],
-  },
+  hasDiagram?: boolean;
+};
+
+const SOLUTIONS: Solution[] = [
   {
     icon: MessagesSquare,
-    title: "LLM Applications",
-    description: "Custom AI assistants, agents, and intelligent automation systems.",
-    bullets: ["Agent orchestration", "Tool-augmented LLMs", "Workflow automation"],
+    title: "AI Assistants",
+    description: "Custom AI helpers that understand your business and get real work done.",
+    bullets: ["Answer questions about your data", "Automate repetitive tasks", "Connect to your tools"],
   },
   {
     icon: Database,
-    title: "Knowledge Intelligence",
-    description: "Advanced RAG systems, semantic search, and document intelligence.",
-    bullets: ["Hybrid retrieval", "Reranking pipelines", "Document understanding"],
+    title: "Smart Document Search",
+    description: "Find the right answer in thousands of documents — instantly, with sources.",
+    bullets: ["Search across all your files", "Get answers with citations", "Works in multiple languages"],
   },
   {
     icon: ServerCog,
-    title: "AI Infrastructure",
-    description: "Deployment, optimization, and scalable AI engineering.",
-    bullets: ["Model serving", "GPU optimization", "Observability"],
+    title: "Private AI Infrastructure",
+    description:
+      "We deploy AI systems directly within your organization's infrastructure, ensuring full control over data, security, and operations.",
+    bullets: ["Full data control", "Secure by design", "You run the operations"],
+  },
+  {
+    icon: Brain,
+    title: "Custom AI Models",
+    description:
+      "We build small, efficient AI models trained specifically for your task — not generic tools that try to do everything.",
+    bullets: ["Built for one specific job", "Faster and cheaper to run", "You own the model"],
+    hasDiagram: true,
   },
 ];
 
@@ -71,17 +79,20 @@ export function SolutionsSection() {
         lead={t("lead")}
       />
 
-      <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SOLUTIONS.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.08}>
             <article className="hl-card-hover group flex h-full flex-col rounded-2xl border border-hl-border bg-hl-surface/60 p-6 hl-card-glow">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-hl-border bg-hl-surface-2 text-hl-cyan">
-                <s.icon className="h-5 w-5" />
+              <div className="flex items-center justify-between">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-hl-border bg-hl-surface-2 text-hl-cyan">
+                  <s.icon className="h-5 w-5" />
+                </div>
+                {s.hasDiagram && <ModelSchematic />}
               </div>
-              <h3 className="mt-5 text-lg font-semibold tracking-tight text-foreground">
+              <h3 className="mt-5 text-lg font-bold tracking-tight text-foreground">
                 {s.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-hl-muted">
+              <p className="mt-2 text-sm font-medium leading-relaxed text-hl-muted">
                 {s.description}
               </p>
               <ul className="mt-4 space-y-1.5">
@@ -122,26 +133,26 @@ const PROJECTS: {
   {
     name: "GGUF Loader",
     description:
-      "An offline AI platform enabling users to run large language models locally with privacy and control. Built around the GGUF format with CUDA acceleration and retrieval-augmented generation.",
-    tags: ["Python", "LLMs", "GGUF", "RAG", "CUDA"],
+      "A platform that lets you run powerful AI models on your own computer — no internet needed, no data sent anywhere. Just install and go.",
+    tags: ["Python", "AI Models", "Offline", "Private"],
     metrics: [
-      { label: "Runtime", value: "Local" },
-      { label: "Stack", value: "CUDA" },
-      { label: "Mode", value: "Offline" },
+      { label: "Runs", value: "On your PC" },
+      { label: "Internet", value: "Not needed" },
+      { label: "Data sent", value: "None" },
     ],
-    accent: "from-[#00E0FF]/20 to-transparent",
+    accent: "from-[#4AF3F8]/20 to-transparent",
   },
   {
     name: "Legal Intelligence System",
     description:
-      "A semantic retrieval system designed for complex document analysis and knowledge discovery. Combines BGE-M3 embeddings, vector search, reranking, and OCR over heterogeneous legal corpora.",
-    tags: ["BGE-M3", "Vector Database", "Reranking", "OCR"],
+      "A smart search tool for legal documents. Ask a question in plain language and get the exact paragraph — with the source document cited — even across thousands of files.",
+    tags: ["Smart Search", "Multilingual", "Citations", "Document AI"],
     metrics: [
-      { label: "Embedder", value: "BGE-M3" },
-      { label: "Pipeline", value: "Rerank" },
-      { label: "Sources", value: "OCR" },
+      { label: "Searches", value: "In plain language" },
+      { label: "Results", value: "With sources" },
+      { label: "Languages", value: "Multi" },
     ],
-    accent: "from-[#6EA8FF]/20 to-transparent",
+    accent: "from-[#29C4F8]/20 to-transparent",
   },
 ];
 
@@ -181,7 +192,7 @@ export function ProjectsSection() {
                       <span className="h-1.5 w-1.5 rounded-full bg-hl-cyan" />
                       {String(i + 1).padStart(2, "0")} / Project
                     </div>
-                    <h3 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
+                    <h3 className="mt-3 text-2xl font-bold tracking-tight text-foreground">
                       {p.name}
                     </h3>
                   </div>
@@ -194,7 +205,7 @@ export function ProjectsSection() {
                   </Link>
                 </div>
 
-                <p className="mt-4 text-sm leading-relaxed text-hl-muted">
+                <p className="mt-4 text-sm font-medium leading-relaxed text-hl-muted">
                   {p.description}
                 </p>
 
@@ -228,21 +239,21 @@ export function ProjectsSection() {
 const WHY: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: ShieldCheck,
-    title: "Privacy First",
+    title: "Your Data Stays Yours",
     description:
-      "Building AI systems where your data remains under your control. We design for local execution, encrypted pipelines, and zero data leakage by default — never as an afterthought.",
+      "We build AI systems where your data never leaves your control. Everything runs on your computers, by design — not because of a privacy policy that can change anytime.",
   },
   {
     icon: FlaskConical,
-    title: "Research Driven",
+    title: "Grounded in Real Research",
     description:
-      "Transforming modern AI research into practical solutions. We track the frontier — from retrieval architectures to inference acceleration — and translate it into engineering that ships.",
+      "We follow the latest AI breakthroughs and translate them into practical tools for your business. You get the benefit of cutting-edge research without having to track it yourself.",
   },
   {
     icon: Layers,
-    title: "Engineering Excellence",
+    title: "Built to Last",
     description:
-      "Designing reliable AI systems from prototype to production. Observability, evaluation, and reproducibility are built into every layer of the stack we deliver.",
+      "We don't build demos that break. Every system we ship is designed to run reliably in production — with monitoring, testing, and documentation your team can actually use.",
   },
 ];
 
@@ -267,7 +278,7 @@ export function WhySection() {
               <h3 className="mt-5 text-xl font-semibold tracking-tight text-foreground">
                 {w.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-hl-muted">
+              <p className="mt-3 text-sm font-medium leading-relaxed text-hl-muted">
                 {w.description}
               </p>
               <span className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-wider text-hl-muted/50">
@@ -288,37 +299,37 @@ const SERVICES: { icon: LucideIcon; title: string; description: string }[] = [
     icon: Cpu,
     title: "Custom AI Development",
     description:
-      "Bespoke AI systems designed from first principles — from problem framing to deployed model pipelines.",
+      "AI systems built specifically for your business problem — not generic tools repackaged.",
   },
   {
     icon: FileSearch,
-    title: "Retrieval-Augmented Generation",
+    title: "Smart Document Search",
     description:
-      "Production RAG systems with hybrid retrieval, reranking, and evaluation harnesses you can trust.",
+      "AI that reads your documents and answers questions with sources you can verify.",
   },
   {
     icon: GitBranch,
-    title: "LLM Integration",
+    title: "AI Integration",
     description:
-      "Embedding language models into your products with tooling, guardrails, and observability.",
+      "We connect AI capabilities into your existing software — safely and reliably.",
   },
   {
     icon: Layers,
-    title: "AI Automation",
+    title: "Workflow Automation",
     description:
-      "Agent-based automation that handles real workflows — not just demos — with human-in-the-loop safety.",
+      "AI that handles repetitive tasks so your team can focus on higher-value work.",
   },
   {
     icon: ServerCog,
-    title: "Private AI Deployment",
+    title: "Private AI Setup",
     description:
-      "On-prem and air-gapped deployment of open models, tuned for your hardware and your data boundaries.",
+      "We install and configure AI to run entirely on your own computers — no cloud required.",
   },
   {
     icon: FlaskConical,
-    title: "AI Consulting",
+    title: "AI Advisory",
     description:
-      "Architecture review, feasibility studies, and roadmap design for organizations adopting AI seriously.",
+      "Not sure where to start? We help you understand what AI can do for your business — in plain language.",
   },
 ];
 
@@ -348,7 +359,7 @@ export function ServicesSection() {
               <h3 className="mt-5 text-base font-semibold tracking-tight text-foreground">
                 {s.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-hl-muted">
+              <p className="mt-2 text-sm font-medium leading-relaxed text-hl-muted">
                 {s.description}
               </p>
             </article>
@@ -387,9 +398,9 @@ export function AboutTeaserSection() {
             <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-hl-border pt-8 sm:grid-cols-4">
               {[
                 { label: "Focus", value: "Private AI" },
-                { label: "Stack", value: "LLM · RAG · Infra" },
-                { label: "Engineering", value: "End-to-end" },
-                { label: "Approach", value: "Research-led" },
+                { label: "Approach", value: "Built for you" },
+                { label: "Delivery", value: "End-to-end" },
+                { label: "Method", value: "Research-led" },
               ].map((s) => (
                 <div key={s.label}>
                   <dt className="font-mono text-[10px] uppercase tracking-wider text-hl-muted">

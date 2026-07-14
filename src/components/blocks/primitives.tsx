@@ -36,7 +36,7 @@ export function SectionHeading({
   return (
     <As
       id={id}
-      className={`hl-text-gradient text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl ${className}`}
+      className={`hl-text-gradient font-display text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl ${className}`}
     >
       {children}
     </As>
@@ -53,7 +53,7 @@ export function Lead({
 }) {
   return (
     <p
-      className={`max-w-2xl text-base leading-relaxed text-hl-muted md:text-lg ${className}`}
+      className={`max-w-2xl text-base font-medium leading-relaxed text-hl-muted md:text-lg ${className}`}
     >
       {children}
     </p>

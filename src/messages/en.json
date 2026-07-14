@@ -4,80 +4,81 @@
     "localeFlag": "EN"
   },
   "nav": {
-    "solutions": "Solutions",
-    "projects": "Projects",
-    "research": "Research",
-    "network": "Network",
+    "solutions": "What We Do",
+    "projects": "Our Work",
+    "research": "Insights",
+    "network": "Partners",
     "about": "About",
     "contact": "Contact",
-    "exploreSolutions": "Explore Solutions",
+    "pricing": "Pricing",
+    "exploreSolutions": "See What We Do",
     "toggleNav": "Toggle navigation"
   },
   "brand": {
-    "tagline": "Engineering Intelligent Systems"
+    "tagline": "Building Intelligent Systems"
   },
   "hero": {
-    "badge": "Deep-tech AI engineering",
-    "title1": "Engineering Intelligent",
-    "title2": "Systems for the",
-    "title3": "Future",
-    "subtitle": "Haal Lab builds advanced AI solutions including large language model applications, retrieval systems, automation platforms, and private AI infrastructure — engineered for organizations that take intelligence seriously.",
-    "exploreSolutions": "Explore Solutions",
-    "contactUs": "Contact Us",
-    "feature1": "Privacy-first architecture",
-    "feature2": "Production-grade engineering",
-    "feature3": "Research-driven design"
+    "badge": "AI Engineering Lab",
+    "title1": "Your AI.",
+    "title2": "Your Data.",
+    "title3": "Your Control.",
+    "subtitle": "Every solution is deployed within your environment, giving you complete ownership of your data, models, and operations.",
+    "exploreSolutions": "See What We Do",
+    "contactUs": "Talk to Us",
+    "feature1": "Privacy",
+    "feature2": "Security",
+    "feature3": "Cost Efficient"
   },
   "solutions": {
-    "eyebrow": "Capabilities",
-    "title": "Four pillars of a modern AI stack",
-    "lead": "From private local inference to enterprise knowledge systems — each capability is engineered to operate independently or compose into a unified platform.",
+    "eyebrow": "What We Do",
+    "title": "Five ways we help you use AI",
+    "lead": "Each service stands on its own or works together as a complete system. We focus on what your business needs — not on chasing the latest trend.",
     "learnMore": "Learn more"
   },
   "projects": {
-    "eyebrow": "Featured Work",
-    "title": "Engineering we ship",
-    "lead": "Representative projects that show how Haal Lab turns modern AI research into systems that hold up in production.",
-    "viewAll": "View all projects"
+    "eyebrow": "Our Work",
+    "title": "Real systems we've built",
+    "lead": "Not demos. Not prototypes. These are working AI systems that solve real problems for real organizations.",
+    "viewAll": "See all projects"
   },
   "why": {
     "eyebrow": "Why Haal Lab",
-    "title": "Principles we engineer against",
-    "lead": "Three commitments that shape every system we design — and every line of code we ship."
+    "title": "What sets us apart",
+    "lead": "Three commitments that shape everything we build — and every relationship we have with clients."
   },
   "services": {
     "eyebrow": "Services",
-    "title": "How we engage",
-    "lead": "A focused set of services that cover the full lifecycle of an AI system — from research and architecture to deployment and operation."
+    "title": "How we can help",
+    "lead": "From a single AI assistant to a complete private AI platform, we meet you where you are."
   },
   "aboutTeaser": {
     "eyebrow": "About Haal Lab",
-    "title": "An AI engineering company, not an agency.",
-    "body1": "Haal Lab is an AI engineering company focused on developing intelligent software systems using modern machine learning and language model technologies.",
-    "body2": "We treat AI as an engineering discipline — with rigor, evaluation, and production discipline at the core. Our work spans local inference platforms, retrieval systems, agent orchestration, and the infrastructure required to run them reliably at scale.",
+    "title": "We're engineers, not marketers.",
+    "body1": "Haal Lab is an AI engineering company. We build intelligent software systems that help organizations work smarter — without sending their data to third-party services.",
+    "body2": "We treat AI as a craft, not a buzzword. Our work spans from AI that runs entirely on your own computers, to smart search across your documents, to custom AI models built specifically for your tasks.",
     "readMission": "Read our mission"
   },
   "contactCta": {
-    "eyebrow": "Start a conversation",
-    "title": "Have a system worth building?",
-    "lead": "Tell us about the problem you are solving. We respond to every serious inquiry with a concrete technical perspective — usually within two business days.",
-    "contactUs": "Contact Us"
+    "eyebrow": "Start a Conversation",
+    "title": "Have a problem AI could solve?",
+    "lead": "Tell us what you're trying to achieve. We'll give you an honest, practical answer — usually within two business days. No sales pressure, no jargon.",
+    "contactUs": "Talk to Us"
   },
   "partners": {
-    "eyebrow": "Network",
-    "title": "Built on a trusted ecosystem",
-    "lead": "We partner with the technology, infrastructure, cloud, and research organizations that make production AI possible — with a focus on European sovereignty, open-weight models, and open-source infrastructure.",
-    "viewAll": "View all partners & advisors",
+    "eyebrow": "Partners",
+    "title": "Working with the best",
+    "lead": "We've built relationships with the technology companies and research institutions that matter — so you benefit from the right tools for your specific needs.",
+    "viewAll": "See all partners",
     "count": "{count} partners"
   },
   "advisors": {
     "eyebrow": "Advisory Board",
-    "title": "People who keep us sharp",
-    "lead": "Our advisors bring deep expertise across AI research, infrastructure, privacy law, security, and product strategy. They review our architecture, pressure-test our decisions, and keep us honest about the gap between research and production.",
-    "viewAll": "Meet the full advisory board"
+    "title": "Experts who guide our work",
+    "lead": "Our advisors bring deep experience across AI research, engineering, privacy law, and security. They review our work and keep us honest.",
+    "viewAll": "Meet the advisory board"
   },
   "footer": {
-    "description": "A deep-tech AI engineering company building private, intelligent, and reliable AI systems — from local LLM platforms to enterprise knowledge infrastructure.",
+    "description": "We build custom AI systems that run privately on your own computers — from smart document search to AI assistants that get work done.",
     "pages": "Pages",
     "home": "Home",
     "getInTouch": "Get in touch",
@@ -98,40 +99,46 @@
   },
   "pageHeaders": {
     "solutions": {
-      "eyebrow": "Solutions",
-      "title": "AI capabilities, engineered for production.",
-      "lead": "Four interlocking capabilities that cover the full AI stack — from private local inference to enterprise knowledge systems. Each can be delivered standalone or composed into a unified platform.",
-      "meta": "haal-lab.solutions / capabilities"
+      "eyebrow": "What We Do",
+      "title": "AI solutions built for your business.",
+      "lead": "Five ways we help organizations use AI — each can work on its own or together as a complete system. We focus on solving your actual problem, not on pushing a particular technology.",
+      "meta": "haal-lab.solutions / what-we-do"
     },
     "projects": {
-      "eyebrow": "Projects",
-      "title": "Technical case studies in AI engineering.",
-      "lead": "Representative work that shows how Haal Lab turns modern AI research into systems that hold up under real workloads. Each project below covers the problem, the approach, and the architecture we shipped.",
-      "meta": "haal-lab.solutions / projects"
+      "eyebrow": "Our Work",
+      "title": "Real AI systems we've built.",
+      "lead": "These aren't demos or prototypes. They're working systems that solve real problems. Each project shows the challenge, our approach, and the result.",
+      "meta": "haal-lab.solutions / our-work"
     },
     "research": {
-      "eyebrow": "Research",
-      "title": "Technical notes from the engineering floor.",
-      "lead": "Articles, experiments, and AI insights from the Haal Lab team. We write about the systems we ship — what worked, what didn't, and the reasoning behind the choices.",
-      "meta": "haal-lab.solutions / research"
+      "eyebrow": "Insights",
+      "title": "What we're learning about AI.",
+      "lead": "We share what we learn as we build — what works, what doesn't, and what's coming next. Written in plain language for business leaders and technical teams alike.",
+      "meta": "haal-lab.solutions / insights"
     },
     "network": {
-      "eyebrow": "Network",
-      "title": "Partners and advisors who make our work possible.",
-      "lead": "Haal Lab is built on a network of technology, infrastructure, cloud, and research partners — and an advisory board that keeps our engineering honest. Together they let us deliver production AI systems that meet the constraints European organizations actually face.",
-      "meta": "haal-lab.solutions / network"
+      "eyebrow": "Partners",
+      "title": "The people and organizations behind our work.",
+      "lead": "Haal Lab is built on a network of technology partners and expert advisors. Together, they help us deliver AI systems that meet the real needs of European organizations.",
+      "meta": "haal-lab.solutions / partners"
     },
     "about": {
       "eyebrow": "About",
-      "title": "An AI engineering company, not an agency.",
-      "lead": "Haal Lab is an AI engineering company focused on developing intelligent software systems using modern machine learning and language model technologies.",
+      "title": "An AI company built on engineering, not hype.",
+      "lead": "Haal Lab builds intelligent software systems that help organizations work smarter — without sending their data to third-party services.",
       "meta": "haal-lab.solutions / about"
     },
     "contact": {
       "eyebrow": "Contact",
-      "title": "Tell us what you are trying to build.",
-      "lead": "We respond to every serious inquiry with a concrete technical perspective — usually within two business days. The more context you share, the more useful our reply will be.",
+      "title": "Tell us what you're trying to achieve.",
+      "lead": "We respond to every serious inquiry with a practical, honest answer — usually within two business days. The more you tell us, the more useful our reply will be.",
       "meta": "haal-lab.solutions / contact"
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title": "Transparent pricing for real AI systems.",
+      "lead": "Four packages designed for startups, businesses, enterprises, and research institutions. Every tier delivers a working system — not a slide deck.",
+      "meta": "haal-lab.solutions / pricing"
     }
   }
 }

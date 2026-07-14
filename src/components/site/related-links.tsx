@@ -17,12 +17,13 @@ export function RelatedLinks({
   const t = useTranslations("relatedLinks");
   const tNav = useTranslations("nav");
 
-  const ALL_PAGES: { href: "/solutions" | "/projects" | "/research" | "/network" | "/about" | "/contact"; label: string; description: string }[] = [
+  const ALL_PAGES: { href: "/solutions" | "/projects" | "/research" | "/network" | "/about" | "/contact" | "/pricing"; label: string; description: string }[] = [
     { href: "/solutions", label: tNav("solutions"), description: "" },
     { href: "/projects", label: tNav("projects"), description: "" },
     { href: "/research", label: tNav("research"), description: "" },
     { href: "/network", label: tNav("network"), description: "" },
     { href: "/about", label: tNav("about"), description: "" },
+    { href: "/pricing", label: tNav("pricing"), description: "" },
     { href: "/contact", label: tNav("contact"), description: "" },
   ];
 

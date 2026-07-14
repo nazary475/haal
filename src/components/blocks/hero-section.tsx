@@ -36,7 +36,7 @@ export function HeroSection() {
             </Reveal>
 
             <Reveal delay={0.08}>
-              <h1 className="mt-6 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-[64px]">
+              <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-5xl md:text-6xl lg:text-[64px]">
                 <span className="hl-text-gradient">{t("title1")}</span>
                 <br />
                 <span className="hl-text-gradient">{t("title2")}</span>{" "}
@@ -45,7 +45,7 @@ export function HeroSection() {
             </Reveal>
 
             <Reveal delay={0.16}>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-hl-muted md:text-lg">
+              <p className="mt-6 max-w-xl text-base font-medium leading-relaxed text-hl-muted md:text-lg">
                 {t("subtitle")}
               </p>
             </Reveal>
@@ -106,7 +106,7 @@ export function HeroSection() {
                   <span className="h-2 w-2 rounded-full bg-white/15" />
                   <span className="h-2 w-2 rounded-full bg-white/15" />
                   <span className="ml-3 font-mono text-[10px] uppercase tracking-[0.18em] text-hl-muted">
-                    haal-lab · inference-graph
+                    haal-lab · data-to-intelligence
                   </span>
                 </div>
                 <motion.div
@@ -116,9 +116,9 @@ export function HeroSection() {
                   className="absolute bottom-4 right-4 rounded-lg border border-hl-border bg-background/80 px-3 py-2 backdrop-blur"
                 >
                   <p className="font-mono text-[10px] uppercase tracking-wider text-hl-muted">
-                    Latency
+                    Your data
                   </p>
-                  <p className="font-mono text-sm text-hl-cyan">12.4 ms</p>
+                  <p className="font-mono text-sm font-bold text-hl-cyan">→ Intelligence</p>
                 </motion.div>
               </motion.div>
             </Reveal>

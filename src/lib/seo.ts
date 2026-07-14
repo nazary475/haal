@@ -60,6 +60,12 @@ export const NAV: { label: string; href: string; description: string }[] = [
       "Haal Lab is an AI engineering company focused on intelligent software systems using modern ML and LLM technologies.",
   },
   {
+    label: "Pricing",
+    href: "/pricing",
+    description:
+      "Four pricing tiers for AI engineering: Explorer, Professional, Enterprise, and Research & Academic.",
+  },
+  {
     label: "Contact",
     href: "/contact",
     description:
@@ -125,6 +131,10 @@ export const BREADCRUMBS: Record<string, { name: string; path: string }[]> = {
   "/contact": [
     { name: "Home", path: "" },
     { name: "Contact", path: "/contact" },
+  ],
+  "/pricing": [
+    { name: "Home", path: "" },
+    { name: "Pricing", path: "/pricing" },
   ],
 };
 
@@ -291,6 +301,33 @@ export const FAQS: Record<string, FAQ[]> = {
       question: "How do I become a Haal Lab partner?",
       answer:
         "We partner with organizations that share our commitment to open-weight models, European sovereignty, and production-grade engineering. If you build technology, infrastructure, or research that aligns with our practice, reach out at hello@haal-lab.solutions.",
+    },
+  ],
+  pricing: [
+    {
+      question: "How much does it cost to build an AI system with Haal Lab?",
+      answer:
+        "Haal Lab offers four pricing tiers: Explorer (€4,900 one-time) for feasibility validation, Professional (€14,900 per project) for a production-ready AI system, Enterprise (€39,900+ per engagement) for multi-system private infrastructure, and Research & Academic (custom pricing) for university labs and research institutions.",
+    },
+    {
+      question: "What is included in the Explorer package?",
+      answer:
+        "The Explorer package (€4,900) includes a 2-hour discovery workshop, a written feasibility report with architecture sketch, and a working proof-of-concept on your sample data — delivered in 2 weeks. It is designed to validate whether AI can solve your specific problem before committing further budget.",
+    },
+    {
+      question: "What is the difference between Professional and Enterprise?",
+      answer:
+        "Professional (€14,900) delivers one production AI system with integration, evaluation, and 30-day support. Enterprise (€39,900+) adds on-prem/air-gapped deployment, up to 3 interconnected systems, GDPR & EU AI Act compliance, GPU optimization, full observability, team training, and 90-day support with SLA.",
+    },
+    {
+      question: "Does Haal Lab offer academic or research pricing?",
+      answer:
+        "Yes. Our Research & Academic tier offers 30–40% below commercial rates, with engagements scoped to research budgets and grant cycles. We support RAG systems for research corpora, reproducible experiment infrastructure, open-weight models for publishable results, and optional co-authorship on system design.",
+    },
+    {
+      question: "Can I add services to my package later?",
+      answer:
+        "Yes. Haal Lab offers add-ons including extended support (€2,400/month), additional integrations (€3,900/integration), team training workshops (€1,900/session), and continuous evaluation & monitoring (€2,900/month). These can be added to any tier at any time.",
     },
   ],
 };

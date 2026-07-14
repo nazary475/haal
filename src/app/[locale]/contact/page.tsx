@@ -5,12 +5,7 @@ import { PageSchemas } from "@/components/site/json-ld";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { FaqSection } from "@/components/site/faq-section";
 import { FAQS } from "@/lib/seo";
-import { Locale, locales } from "@/i18n/routing";
-
-// Enable static rendering for all locales
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
+import { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Contact — Start a Conversation with Haal Lab",
