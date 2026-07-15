@@ -87,7 +87,7 @@ export function ProjectsPage() {
       {/* Projects */}
       <div className="hl-container hl-section-pad divide-y divide-hl-border">
         {PROJECTS.map((p, idx) => (
-          <section key={p.id} id={p.id} className="py-16 md:py-24">
+          <section key={p.id} id={p.id} className="py-10 md:py-14">
             <Reveal>
               <div className="flex flex-wrap items-center gap-3">
                 <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-hl-cyan">
@@ -186,7 +186,7 @@ export function ProjectsPage() {
             </div>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-5 py-3 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90"
+              className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-5 py-3 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90"
             >
               Start a project
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

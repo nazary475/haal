@@ -336,7 +336,7 @@ export function EnterpriseContactForm() {
         <Button
           type="submit"
           disabled={state.submitting}
-          className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-7 py-3.5 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_30px_-8px_rgba(0,224,255,0.5)] disabled:opacity-60"
+          className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-7 py-3.5 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_30px_-8px_rgba(96,165,250,0.5)] disabled:opacity-60"
         >
           {state.submitting ? (
             <>

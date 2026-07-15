@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Logo } from "./logo";
@@ -22,7 +23,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-hl-border bg-hl-surface/40">
       {/* CTA Section */}
       <div className="border-b border-hl-border">
-        <div className="hl-container hl-section-pad py-16 md:py-20">
+        <div className="hl-container hl-section-pad py-12 md:py-14">
           <div className="flex flex-col items-center text-center">
             <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl lg:text-4xl">
               {t("readyToStart")}
@@ -33,7 +34,7 @@ export function Footer() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_30px_-8px_rgba(0,224,255,0.5)]"
+                className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_30px_-8px_rgba(96,165,250,0.5)]"
               >
                 {t("contactHaalLab")}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -72,7 +73,7 @@ export function Footer() {
           </div>
 
           {/* Pages */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-3">
             <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/80">
               {t("pages")}
             </h2>
@@ -90,19 +91,33 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div className="md:col-span-3">
+          {/* Founder - New Column */}
+          <div className="md:col-span-4">
             <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/80">
-              {t("getInTouch")}
+              Founder
             </h2>
-            <a
-              href="mailto:hussain.nazary@haal-lab.solutions"
-              className="group inline-flex items-center gap-1 text-sm text-foreground hover:text-hl-cyan"
-            >
-              hussain.nazary@haal-lab.solutions
-              <ArrowUpRight className="h-3 w-3 opacity-60 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-            <p className="mt-3 text-xs text-hl-muted">haal-lab.solutions</p>
+            <div className="flex items-start gap-4">
+              <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl border-2 border-hl-border bg-hl-surface-2">
+                <Image
+                  src="/jaafar-najafi-rad.jpg"
+                  alt="Jaafar Najafi Rad"
+                  fill
+                  className="object-contain"
+                  sizes="96px"
+                />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-foreground">
+                  Jaafar Najafi Rad
+                </h3>
+                <p className="mt-1 font-mono text-sm font-bold uppercase tracking-wider text-hl-cyan">
+                  Founder & Engineer
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-hl-muted">
+                  Building private, production-ready AI systems for organizations that value data sovereignty.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

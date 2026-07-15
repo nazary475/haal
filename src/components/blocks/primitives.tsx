@@ -82,7 +82,7 @@ export function SectionShell({
   return (
     <section
       id={id}
-      className={`hl-container hl-section-pad py-20 md:py-28 ${className}`}
+      className={`hl-container hl-section-pad py-12 md:py-16 ${className}`}
     >
       {children}
     </section>

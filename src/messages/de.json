@@ -4,9 +4,9 @@
     "localeFlag": "DE"
   },
   "nav": {
-    "solutions": "Was wir tun",
+    "solutions": "Was wir tun?",
     "projects": "Unsere Arbeit",
-    "research": "Erkenntnisse",
+    "research": "Forschungsartikel",
     "network": "Partner",
     "about": "Über uns",
     "contact": "Kontakt",
@@ -177,10 +177,10 @@
       "meta": "haal-lab.solutions / unsere-arbeit"
     },
     "research": {
-      "eyebrow": "Erkenntnisse",
+      "eyebrow": "Forschungsartikel",
       "title": "Was wir über AI lernen.",
       "lead": "Wir teilen, was wir beim Bauen lernen — was funktioniert, was nicht und was als Nächstes kommt. In einfacher Sprache für Führungskräfte und technische Teams geschrieben.",
-      "meta": "haal-lab.solutions / erkenntnisse"
+      "meta": "haal-lab.solutions / forschung"
     },
     "network": {
       "eyebrow": "Partner",

@@ -12,95 +12,74 @@ import {
 } from "@/components/blocks/primitives";
 
 /**
- * FounderSection — showcases the founder with photo and bio.
+ * FounderSection — compact showcase of the founder with photo and brief bio.
  */
 export function FounderSection() {
   return (
     <SectionShell className="border-t border-hl-border bg-hl-surface/30">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-        {/* Content Column */}
-        <div className="lg:col-span-7">
+      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+        {/* Photo Column - Much Larger */}
+        <div>
           <Reveal>
-            <Eyebrow>Founder</Eyebrow>
-            <SectionHeading className="mt-4">
-              Building the future of private AI
-            </SectionHeading>
-            <Lead className="mt-6">
-              Haal Lab was founded by Jaafar Najafi Rad, an AI engineer with a vision to
-              make advanced AI systems accessible, private, and truly owned by the
-              organizations that use them.
-            </Lead>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <div className="mt-8 space-y-4">
-              <p className="text-base leading-relaxed text-foreground/90">
-                With deep expertise in machine learning, language models, and production AI
-                systems, Jaafar recognized a critical gap: organizations needed AI solutions
-                that respected data sovereignty, ran on their own infrastructure, and
-                didn&apos;t compromise on capability or privacy.
-              </p>
-              <p className="text-base leading-relaxed text-foreground/90">
-                Haal Lab embodies this vision — an engineering-first company building
-                intelligent systems with open-weight models, transparent architectures, and
-                a commitment to putting control back in the hands of those who deploy AI.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link
-                href="/about"
-                className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-5 py-3 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90"
-              >
-                Learn more about us
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-hl-border bg-hl-surface/40 px-5 py-3 text-sm font-medium text-foreground backdrop-blur transition-colors hover:border-hl-cyan/40 hover:text-hl-cyan"
-              >
-                <Mail className="h-4 w-4" />
-                Get in touch
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-
-        {/* Photo Column */}
-        <div className="lg:col-span-5">
-          <Reveal delay={0.15}>
             <div className="relative">
-              {/* Card Container */}
-              <div className="relative overflow-hidden rounded-2xl border border-hl-border bg-hl-surface/60 p-6 hl-card-glow">
-                <div className="pointer-events-none absolute inset-0 hl-grid-bg-fine opacity-50" />
-                
-                {/* Photo Container */}
-                <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-hl-border bg-hl-surface-2">
+              {/* "Founder" label at top */}
+              <div className="mb-4">
+                <span className="inline-block rounded-full border border-hl-cyan/40 bg-hl-cyan/10 px-4 py-2 font-mono text-sm font-bold uppercase tracking-wider text-hl-cyan">
+                  Founder
+                </span>
+              </div>
+              
+              <div className="relative overflow-hidden rounded-3xl border-2 border-hl-border bg-hl-surface/60 p-8 hl-card-glow">
+                {/* Photo Container - Even larger size */}
+                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border-2 border-hl-border bg-hl-surface-2">
                   <Image
                     src="/jaafar-najafi-rad.jpg"
                     alt="Jaafar Najafi Rad - Founder of Haal Lab"
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                    sizes="(max-width: 768px) 100vw, 55vw"
                     priority
                   />
                 </div>
 
-                {/* Info Card */}
-                <div className="relative mt-4 rounded-xl border border-hl-border bg-hl-surface/80 p-4 backdrop-blur">
-                  <h3 className="text-xl font-bold tracking-tight text-foreground">
+                {/* Info Card - Name and title */}
+                <div className="relative mt-6 rounded-2xl border-2 border-hl-border bg-hl-surface/80 p-6 backdrop-blur">
+                  <h3 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
                     Jaafar Najafi Rad
                   </h3>
-                  <p className="mt-1 font-mono text-sm uppercase tracking-wider text-hl-cyan">
-                    Founder · Haal Lab
+                  <p className="mt-2 font-mono text-xl font-bold uppercase tracking-wider text-hl-cyan md:text-2xl">
+                    Founder & Engineer
                   </p>
                 </div>
               </div>
+            </div>
+          </Reveal>
+        </div>
 
-              {/* Background Glow */}
-              <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-hl-cyan/10 blur-3xl" />
+        {/* Content Column */}
+        <div>
+          <Reveal delay={0.1}>
+            <Eyebrow>About the Founder</Eyebrow>
+            <SectionHeading className="mt-3">
+              Engineering-first approach to AI
+            </SectionHeading>
+            <p className="mt-4 text-lg leading-relaxed text-hl-muted">
+              Haal Lab was founded by Jaafar Najafi Rad, an AI engineer focused on making
+              advanced AI systems accessible, private, and truly owned by organizations.
+              Built on expertise in machine learning and production systems, with a
+              commitment to data sovereignty and transparent architectures.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <Link
+                href="/about"
+                className="group inline-flex items-center gap-2 text-base font-medium text-hl-cyan"
+              >
+                Learn more about us
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
             </div>
           </Reveal>
         </div>

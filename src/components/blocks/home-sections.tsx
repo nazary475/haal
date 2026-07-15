@@ -27,6 +27,7 @@ import {
   SectionHeader,
 } from "@/components/blocks/primitives";
 import { ModelSchematic } from "@/components/visuals/model-schematic";
+import { ArchitectureDiagram } from "@/components/visuals/architecture-diagram";
 
 /* ---------------- Solutions section ---------------- */
 
@@ -79,7 +80,7 @@ export function SolutionsSection() {
         lead={t("lead")}
       />
 
-      <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SOLUTIONS.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.08}>
             <article className="hl-card-hover group flex h-full flex-col rounded-2xl border border-hl-border bg-hl-surface/60 p-6 hl-card-glow">
@@ -117,6 +118,26 @@ export function SolutionsSection() {
           </Reveal>
         ))}
       </div>
+
+      {/* CTA after services */}
+      <Reveal delay={0.4}>
+        <div className="mt-10 flex flex-col items-center gap-4 rounded-2xl border border-hl-border bg-hl-surface/40 p-8 text-center">
+          <h3 className="text-lg font-semibold tracking-tight text-foreground">
+            Need an AI system tailored to your organization?
+          </h3>
+          <p className="max-w-2xl text-sm text-hl-muted">
+            Tell us about your requirements, technical environment, and goals. We'll evaluate
+            the most appropriate approach.
+          </p>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-6 py-3 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_30px_-8px_rgba(96,165,250,0.5)]"
+          >
+            Request Technical Discussion
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </div>
+      </Reveal>
     </SectionShell>
   );
 }
@@ -178,7 +199,7 @@ export function ProjectsSection() {
         </Reveal>
       </div>
 
-      <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <div className="mt-10 grid grid-cols-1 gap-4 lg:grid-cols-2">
         {PROJECTS.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.1}>
             <article className="hl-card-hover group relative h-full overflow-hidden rounded-2xl border border-hl-border bg-hl-surface/60 p-8 hl-card-glow">
@@ -234,56 +255,59 @@ export function ProjectsSection() {
   );
 }
 
-/* ---------------- Why Haal Lab ---------------- */
+/* ---------------- Why Haal Lab (Premium version) ---------------- */
 
 const WHY: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: ShieldCheck,
-    title: "Your Data Stays Yours",
+    title: "Private by Design",
     description:
-      "We build AI systems where your data never leaves your control. Everything runs on your computers, by design — not because of a privacy policy that can change anytime.",
+      "Data remains under organizational control. Systems can operate entirely on private infrastructure — not because of a policy, but by architectural design.",
   },
   {
     icon: FlaskConical,
-    title: "Grounded in Real Research",
+    title: "Production Ready",
     description:
-      "We follow the latest AI breakthroughs and translate them into practical tools for your business. You get the benefit of cutting-edge research without having to track it yourself.",
+      "Monitoring, evaluation, deployment, and operational reliability are built into every solution. Not demos that break in production.",
   },
   {
     icon: Layers,
-    title: "Built to Last",
+    title: "Open by Default",
     description:
-      "We don't build demos that break. Every system we ship is designed to run reliably in production — with monitoring, testing, and documentation your team can actually use.",
+      "Organizations retain ownership of their models, infrastructure, and data without vendor lock-in. Full transparency and control.",
   },
 ];
 
 export function WhySection() {
-  const t = useTranslations("why");
-
   return (
-    <SectionShell id="why">
+    <SectionShell id="why" className="border-y border-hl-border bg-hl-surface/30">
       <SectionHeader
-        eyebrow={t("eyebrow")}
-        heading={t("title")}
-        lead={t("lead")}
+        eyebrow="Why HAAL Lab"
+        heading="Why Organizations Choose HAAL Lab"
+        lead="Three commitments that shape everything we build — and every relationship we have with clients."
       />
 
-      <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
         {WHY.map((w, i) => (
           <Reveal key={w.title} delay={i * 0.1}>
-            <article className="relative h-full rounded-2xl border border-hl-border bg-hl-surface/40 p-7">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-hl-border bg-hl-surface-2 text-hl-cyan">
-                <w.icon className="h-5 w-5" />
+            <article className="group relative h-full overflow-hidden rounded-2xl border border-hl-border bg-hl-surface/60 p-8 hl-card-glow transition-all hover:border-hl-cyan/40">
+              <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gradient-to-br from-hl-cyan/10 to-transparent blur-3xl opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="relative">
+                <div className="flex items-center justify-between">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-hl-border bg-hl-surface-2 text-hl-cyan transition-colors group-hover:border-hl-cyan/40">
+                    <w.icon className="h-6 w-6" />
+                  </div>
+                  <span className="font-mono text-xs uppercase tracking-wider text-hl-muted/40">
+                    0{i + 1}
+                  </span>
+                </div>
+                <h3 className="mt-6 text-xl font-bold tracking-tight text-foreground">
+                  {w.title}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-hl-muted">
+                  {w.description}
+                </p>
               </div>
-              <h3 className="mt-5 text-xl font-semibold tracking-tight text-foreground">
-                {w.title}
-              </h3>
-              <p className="mt-3 text-sm font-medium leading-relaxed text-hl-muted">
-                {w.description}
-              </p>
-              <span className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-wider text-hl-muted/50">
-                0{i + 1}
-              </span>
             </article>
           </Reveal>
         ))}
@@ -344,7 +368,7 @@ export function ServicesSection() {
         lead={t("lead")}
       />
 
-      <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-hl-border bg-hl-border sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-hl-border bg-hl-border sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.05}>
             <article className="group flex h-full flex-col bg-hl-surface/80 p-7 transition-colors hover:bg-hl-surface-2">
@@ -370,6 +394,49 @@ export function ServicesSection() {
   );
 }
 
+/* ---------------- Architecture Visual ---------------- */
+
+export function ArchitectureSection() {
+  return (
+    <SectionShell id="architecture">
+      <SectionHeader
+        eyebrow="Architecture"
+        heading="From Data to Intelligence"
+        lead="A modern AI knowledge platform transforms your documents, databases, and data sources into actionable intelligence."
+      />
+
+      <div className="mt-14">
+        <Reveal>
+          <div className="relative aspect-[2/1] w-full overflow-hidden rounded-3xl border border-hl-border bg-hl-surface/60 p-8 hl-card-glow md:p-12">
+            <div className="absolute inset-0 hl-grid-bg-fine opacity-50" />
+            <div className="absolute inset-0 hl-radial-glow opacity-40" />
+            <div className="relative h-full">
+              <ArchitectureDiagram />
+            </div>
+          </div>
+        </Reveal>
+
+        {/* CTA below diagram */}
+        <Reveal delay={0.2}>
+          <div className="mt-6 flex flex-col items-center gap-4 text-center">
+            <p className="max-w-2xl text-sm leading-relaxed text-hl-muted">
+              Every system we build is designed for your specific data sources, workflows, and
+              requirements. No generic solutions.
+            </p>
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-2 rounded-full border border-hl-border bg-hl-surface/60 px-6 py-2.5 text-sm font-medium text-foreground backdrop-blur transition-colors hover:border-hl-cyan/40 hover:text-hl-cyan"
+            >
+              Discuss Your Architecture
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+        </Reveal>
+      </div>
+    </SectionShell>
+  );
+}
+
 /* ---------------- About (homepage teaser) ---------------- */
 
 export function AboutTeaserSection() {
@@ -377,7 +444,7 @@ export function AboutTeaserSection() {
 
   return (
     <SectionShell id="about">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <Reveal>
             <Eyebrow>{t("eyebrow")}</Eyebrow>
@@ -452,7 +519,7 @@ export function ContactCtaSection() {
               <div className="flex flex-col gap-3">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_40px_-8px_rgba(0,224,255,0.6)]"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_40px_-8px_rgba(96,165,250,0.6)]"
                 >
                   {t("contactUs")}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

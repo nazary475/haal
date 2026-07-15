@@ -16,7 +16,7 @@ export function AdvisorsSection({
 
   return (
     <section
-      className="hl-container hl-section-pad py-20 md:py-28 border-t border-hl-border bg-hl-surface/30"
+      className="hl-container hl-section-pad py-12 md:py-14 border-t border-hl-border bg-hl-surface/30"
       aria-labelledby="advisors-heading"
     >
       <Reveal>

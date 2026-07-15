@@ -11,7 +11,7 @@ export function Breadcrumbs({ path }: { path: string }) {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="hl-container hl-section-pad pt-28 md:pt-32"
+      className="hl-container hl-section-pad pt-20 md:pt-24"
     >
       <ol className="flex flex-wrap items-center gap-1.5 text-xs text-hl-muted">
         {crumbs.map((crumb, i) => {

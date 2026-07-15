@@ -85,7 +85,7 @@ export function Navbar() {
           <LanguageSwitcher />
           <Button
             asChild
-            className="group hidden items-center gap-1.5 rounded-full bg-hl-cyan px-5 py-2.5 text-sm font-semibold text-[#04141A] shadow-sm hover:bg-hl-cyan/90 hover:shadow-[0_0_30px_-8px_rgba(0,224,255,0.5)] lg:inline-flex"
+            className="group hidden items-center gap-1.5 rounded-full bg-hl-cyan px-5 py-2.5 text-sm font-bold text-gray-900 shadow-sm hover:bg-hl-cyan/90 hover:shadow-[0_0_30px_-8px_rgba(96,165,250,0.5)] lg:inline-flex"
           >
             <Link href="/contact">
               {t("discussProject")}
@@ -126,7 +126,7 @@ export function Navbar() {
             <li className="mt-2 flex flex-col gap-2 border-t border-hl-border pt-4">
               <Button
                 asChild
-                className="w-full justify-center rounded-full bg-hl-cyan font-semibold text-[#04141A] hover:bg-hl-cyan/90"
+                className="w-full justify-center rounded-full bg-hl-cyan font-bold text-gray-900 hover:bg-hl-cyan/90"
               >
                 <Link href="/contact" onClick={closeMobile}>
                   {t("discussProject")}

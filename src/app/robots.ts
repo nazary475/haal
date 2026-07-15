@@ -52,8 +52,19 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "Google-Extended", // Google's AI training bot
         allow: "/",
       },
+      {
+        userAgent: "PerplexityBot", // Perplexity AI crawler
+        allow: "/",
+      },
+      {
+        userAgent: "YouBot", // You.com AI search
+        allow: "/",
+      },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: [
+      `${SITE_URL}/sitemap.xml`,
+      `${SITE_URL}/research-sitemap.xml`,  // Dedicated research articles sitemap
+    ],
     host: SITE_URL,
     // Include llms.txt for AI crawlers (GEO best practice)
     // Note: llms.txt is fetched at /llms.txt by AI engines that support it.

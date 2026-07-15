@@ -29,7 +29,7 @@ export function GlossarySection() {
         </p>
       </Reveal>
 
-      <dl className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-hl-border bg-hl-border md:grid-cols-2">
+      <dl className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-hl-border bg-hl-border md:grid-cols-2">
         {terms.map(([term, definition], i) => (
           <Reveal key={term} delay={i * 0.03}>
             <div className="bg-hl-surface/80 p-7">

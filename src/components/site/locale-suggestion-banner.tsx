@@ -72,7 +72,7 @@ export function LocaleSuggestionBanner() {
             <div className="flex gap-2 mt-3">
               <button
                 onClick={handleAccept}
-                className="px-3 py-1.5 text-xs font-medium rounded-lg bg-hl-cyan text-hl-bg hover:bg-hl-cyan/90 transition-colors"
+                className="px-3 py-1.5 text-xs font-medium rounded-lg bg-hl-cyan text-gray-900 font-bold hover:bg-hl-cyan/90 transition-colors"
               >
                 Switch to {localeNames[suggestedLocale]}
               </button>

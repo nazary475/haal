@@ -31,7 +31,7 @@ export function FaqSection({
 
   return (
     <section
-      className="hl-container hl-section-pad py-20 md:py-28 border-t border-hl-border"
+      className="hl-container hl-section-pad py-12 md:py-14 border-t border-hl-border"
       aria-labelledby="faq-heading"
     >
       <Reveal>
@@ -46,7 +46,7 @@ export function FaqSection({
         )}
       </Reveal>
 
-      <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-hl-border bg-hl-border lg:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-hl-border bg-hl-border lg:grid-cols-2">
         {faqs.map((faq, i) => (
           <Reveal key={faq.question} delay={i * 0.04}>
             <article className="h-full bg-hl-surface/80 p-7">

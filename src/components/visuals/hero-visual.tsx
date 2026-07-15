@@ -3,22 +3,20 @@
 import { useEffect, useRef } from "react";
 
 /**
- * HeroVisual — "From your data to intelligent action" data-flow diagram.
+ * HeroVisual — Enterprise AI Architecture Diagram
  *
- * Shows a clear, top-down pipeline that anyone can understand:
+ * Professional architecture-focused visual showing:
  *
- *   Data Sources (6 inputs, left side)
+ *   PDFs, Contracts, Research Papers, Emails, Databases, APIs
  *        ↓
- *   Intelligence Layer (center — the AI processing)
+ *   Knowledge Platform (AI-powered intelligence layer)
  *        ↓
- *   Outputs (4 results, right side)
+ *   Search, Analysis, Automation
+ *        ↓
+ *   Reports, Insights, Workflows, Decisions
  *
- * Animated signal pulses travel from each source → through the
- * intelligence layer → to the outputs. Pure SVG + canvas, no images.
- *
- * This replaces the technical transformer diagram with something
- * a non-technical CEO or founder can immediately understand:
- * "Your data goes in, intelligence comes out."
+ * Clean, modern, technical, enterprise-grade design.
+ * SVG-based with animated data flows.
  */
 export function HeroVisual() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -80,43 +78,58 @@ export function HeroVisual() {
     };
   }, []);
 
-  // Layout coordinates within the 800×500 viewBox
+  // Layout coordinates within the 800×500 viewBox (compact for better fit)
   const W = 800;
   const H = 500;
 
-  // Data sources (left column, stacked vertically)
+  // Input sources (top row, horizontally distributed)
   const sources = [
-    { y: 70, label: "Research Papers", icon: "📄" },
-    { y: 125, label: "Lab Data", icon: "🔬" },
-    { y: 180, label: "Internal Docs", icon: "📋" },
-    { y: 235, label: "Emails", icon: "✉️" },
-    { y: 290, label: "Databases", icon: "🗄️" },
-    { y: 345, label: "Business Reports", icon: "📊" },
+    { x: 40, label: "PDFs", icon: "document" },
+    { x: 160, label: "Contracts", icon: "contract" },
+    { x: 280, label: "Research", icon: "research" },
+    { x: 400, label: "Emails", icon: "email" },
+    { x: 520, label: "Databases", icon: "database" },
+    { x: 640, label: "APIs", icon: "api" },
   ];
 
-  const sourceX = 40;
-  const sourceWidth = 160;
-  const sourceHeight = 36;
+  const sourceY = 40;
+  const sourceWidth = 100;
+  const sourceHeight = 60;
 
-  // Intelligence layer (center)
-  const intelX = 340;
-  const intelY = 180;
-  const intelWidth = 140;
-  const intelHeight = 140;
-  const intelCenterX = intelX + intelWidth / 2;
-  const intelCenterY = intelY + intelHeight / 2;
+  // Knowledge Platform (center)
+  const platformX = 150;
+  const platformY = 170;
+  const platformWidth = 500;
+  const platformHeight = 110;
 
-  // Outputs (right column, stacked)
+  // Processing stages (inside platform)
+  const stages = [
+    { x: 200, label: "Search" },
+    { x: 400, label: "Analysis" },
+    { x: 600, label: "Automation" },
+  ];
+
+  // Output results (bottom row)
   const outputs = [
-    { y: 110, label: "Discoveries", icon: "💡" },
-    { y: 195, label: "Insights", icon: "🧠" },
-    { y: 280, label: "Decisions", icon: "✅" },
-    { y: 365, label: "Automation", icon: "⚙️" },
+    { x: 80, label: "Reports" },
+    { x: 270, label: "Insights" },
+    { x: 460, label: "Workflows" },
+    { x: 650, label: "Decisions" },
   ];
 
-  const outputX = 620;
-  const outputWidth = 150;
-  const outputHeight = 36;
+  const outputY = 390;
+  const outputWidth = 120;
+  const outputHeight = 55;
+
+  // SVG icons as path data
+  const icons = {
+    document: "M7 3v18h14V8l-5-5H7zm8 0v5h5",
+    contract: "M8 2v4h12v14H8v4h16V2H8zm4 8h8m-8 4h8",
+    research: "M12 2l-2 7h5l-2 7 7-9h-5l2-5z",
+    email: "M3 8l9 6 9-6M3 8v10h18V8",
+    database: "M12 2c-4.4 0-8 1.8-8 4v12c0 2.2 3.6 4 8 4s8-1.8 8-4V6c0-2.2-3.6-4-8-4z",
+    api: "M3 12h3m12 0h3M7.8 7.8l2.1 2.1m8.2 0l2.1-2.1M12 3v3m0 12v3",
+  };
 
   return (
     <div className="relative h-full w-full">
@@ -131,282 +144,337 @@ export function HeroVisual() {
         className="absolute inset-0 h-full w-full"
         preserveAspectRatio="xMidYMid meet"
         role="img"
-        aria-label="Data flow diagram: your data sources flow through an intelligence layer to produce discoveries, insights, decisions, and automation."
+        aria-label="Enterprise AI architecture: data sources flow through knowledge platform to produce reports, insights, workflows, and decisions"
       >
         <defs>
-          <linearGradient id="hv-flow" x1="0" y1="0" x2="1" y2="0">
+          <linearGradient id="hv-platform-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#1E40AF" />
+            <stop offset="100%" stopColor="#2563EB" />
+          </linearGradient>
+          
+          <linearGradient id="hv-flow-down" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="rgba(37,99,235,0)" />
-            <stop offset="50%" stopColor="rgba(37,99,235,0.6)" />
-            <stop offset="100%" stopColor="rgba(9,80,205,0)" />
-          </linearGradient>
-          <linearGradient id="hv-flow-out" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="rgba(9,80,205,0)" />
-            <stop offset="50%" stopColor="rgba(37,99,235,0.6)" />
+            <stop offset="50%" stopColor="rgba(37,99,235,0.8)" />
             <stop offset="100%" stopColor="rgba(37,99,235,0)" />
           </linearGradient>
-          <linearGradient id="hv-intel" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#2563EB" />
-            <stop offset="100%" stopColor="#0950CD" />
-          </linearGradient>
-          <radialGradient id="hv-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="rgba(37,99,235,0.3)" />
-            <stop offset="100%" stopColor="rgba(37,99,235,0)" />
-          </radialGradient>
+
+          <filter id="hv-glow">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+          <pattern id="hv-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="rgba(37,99,235,0.15)" />
+          </pattern>
         </defs>
 
-        {/* ── Section labels ── */}
-        <text x={sourceX + sourceWidth / 2} y={30} fill="#2D4A7A" fontSize="11" fontFamily="monospace" fontWeight="600" textAnchor="middle" letterSpacing="2">
-          YOUR DATA
-        </text>
-        <text x={intelCenterX} y={30} fill="#2563EB" fontSize="11" fontFamily="monospace" fontWeight="700" textAnchor="middle" letterSpacing="2">
-          NEURAL NETWORK
-        </text>
-        <text x={outputX + outputWidth / 2} y={30} fill="#2D4A7A" fontSize="11" fontFamily="monospace" fontWeight="600" textAnchor="middle" letterSpacing="2">
-          RESULTS
+        {/* ── Input Sources (Top Row) ── */}
+        <text x={W / 2} y={20} fill="#2563EB" fontSize="11" fontFamily="monospace" fontWeight="700" textAnchor="middle" letterSpacing="2.5">
+          DATA SOURCES
         </text>
 
-        {/* ── Connection lines: Sources → Intelligence ── */}
         {sources.map((s, i) => {
-          const startX = sourceX + sourceWidth;
-          const startY = s.y + sourceHeight / 2;
-          const endX = intelX;
-          const endY = intelCenterY;
-          const midX = (startX + endX) / 2;
+          const centerX = s.x + sourceWidth / 2;
+          const bottomY = sourceY + sourceHeight;
+          
           return (
-            <g key={`src-line-${i}`}>
-              {/* Base line */}
-              <path
-                d={`M${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`}
-                stroke="rgba(37,99,235,0.15)"
-                strokeWidth="1.2"
-                fill="none"
-              />
-              {/* Animated flow signal */}
-              <path
-                d={`M${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`}
-                stroke="url(#hv-flow)"
+            <g key={`src-${i}`}>
+              {/* Card */}
+              <rect
+                x={s.x}
+                y={sourceY}
+                width={sourceWidth}
+                height={sourceHeight}
+                rx="8"
+                fill="#F8FAFC"
+                stroke="#CBD5E1"
                 strokeWidth="1.5"
-                fill="none"
-                className="hl-flow"
-                style={{ animationDelay: `${i * 0.4}s` }}
               />
-            </g>
-          );
-        })}
-
-        {/* ── Connection lines: Intelligence → Outputs ── */}
-        {outputs.map((o, i) => {
-          const startX = intelX + intelWidth;
-          const startY = intelCenterY;
-          const endX = outputX;
-          const endY = o.y + outputHeight / 2;
-          const midX = (startX + endX) / 2;
-          return (
-            <g key={`out-line-${i}`}>
-              <path
-                d={`M${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`}
-                stroke="rgba(9,80,205,0.15)"
-                strokeWidth="1.2"
-                fill="none"
+              
+              {/* Icon container */}
+              <rect
+                x={s.x + sourceWidth / 2 - 12}
+                y={sourceY + 12}
+                width="24"
+                height="24"
+                rx="5"
+                fill="#EFF6FF"
+                stroke="#BFDBFE"
+                strokeWidth="1"
               />
-              <path
-                d={`M${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`}
-                stroke="url(#hv-flow-out)"
-                strokeWidth="1.5"
-                fill="none"
-                className="hl-flow"
-                style={{ animationDelay: `${i * 0.4 + 0.8}s` }}
-              />
-            </g>
-          );
-        })}
+              
+              {/* Icon */}
+              <g transform={`translate(${s.x + sourceWidth / 2 - 8}, ${sourceY + 18})`}>
+                <path
+                  d={icons[s.icon as keyof typeof icons]}
+                  stroke="#2563EB"
+                  strokeWidth="1.5"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </g>
 
-        {/* ── Data Source cards (left) ── */}
-        {sources.map((s, i) => (
-          <g key={`src-${i}`}>
-            <rect
-              x={sourceX}
-              y={s.y}
-              width={sourceWidth}
-              height={sourceHeight}
-              rx="8"
-              fill="#F0F5FF"
-              stroke="#CBD9EF"
-              strokeWidth="1"
-            />
-            <circle
-              cx={sourceX + 18}
-              cy={s.y + sourceHeight / 2}
-              r="3"
-              fill="#2563EB"
-              className="hl-pulse"
-              style={{ animationDelay: `${i * 0.3}s` }}
-            />
-            <text
-              x={sourceX + 32}
-              y={s.y + sourceHeight / 2 + 4}
-              fill="#0A1A3A"
-              fontSize="13"
-              fontFamily="Inter, sans-serif"
-              fontWeight="600"
-            >
-              {s.label}
-            </text>
-          </g>
-        ))}
+              {/* Label */}
+              <text
+                x={centerX}
+                y={sourceY + 50}
+                fill="#1E293B"
+                fontSize="11"
+                fontFamily="Inter, sans-serif"
+                fontWeight="600"
+                textAnchor="middle"
+              >
+                {s.label}
+              </text>
 
-        {/* ── Neural Network (center) ── */}
-        <circle cx={intelCenterX} cy={intelCenterY} r={90} fill="url(#hv-glow)" />
-
-        {/* Container background */}
-        <rect
-          x={intelX}
-          y={intelY}
-          width={intelWidth}
-          height={intelHeight}
-          rx="16"
-          fill="#F0F5FF"
-          stroke="#2563EB"
-          strokeWidth="1.5"
-          opacity="0.6"
-        />
-
-        {/* Neural network layers — 4 columns of nodes with connections */}
-        {(() => {
-          const layers = [
-            { x: intelX + 25, nodes: [195, 215, 235, 255] },  // input layer (4 nodes)
-            { x: intelX + 58, nodes: [200, 220, 240] },         // hidden 1 (3 nodes)
-            { x: intelX + 91, nodes: [200, 220, 240] },         // hidden 2 (3 nodes)
-            { x: intelX + 120, nodes: [210, 230] },             // output (2 nodes)
-          ];
-          const nodeRadius = 5;
-          const nodeColor = "#2563EB";
-          const lineColor = "rgba(37,99,235,0.2)";
-
-          // Generate connections between all adjacent layers
-          const connections: React.ReactElement[] = [];
-          for (let li = 0; li < layers.length - 1; li++) {
-            const from = layers[li];
-            const to = layers[li + 1];
-            from.nodes.forEach((fy) => {
-              to.nodes.forEach((ty) => {
-                connections.push(
-                  <line
-                    key={`conn-${li}-${fy}-${ty}`}
-                    x1={from.x}
-                    y1={fy}
-                    x2={to.x}
-                    y2={ty}
-                    stroke={lineColor}
-                    strokeWidth="0.6"
-                  />
-                );
-              });
-            });
-          }
-
-          return (
-            <>
-              {connections}
-              {layers.map((layer, li) =>
-                layer.nodes.map((ny, ni) => (
-                  <circle
-                    key={`node-${li}-${ni}`}
-                    cx={layer.x}
-                    cy={ny}
-                    r={nodeRadius}
-                    fill={nodeColor}
-                    className="hl-pulse"
-                    style={{ animationDelay: `${(li + ni) * 0.2}s` }}
-                  />
-                ))
-              )}
-              {/* Animated flow signal through the network */}
-              <path
-                d={`M ${layers[0].x} ${layers[0].nodes[1]} L ${layers[1].x} ${layers[1].nodes[1]} L ${layers[2].x} ${layers[2].nodes[1]} L ${layers[3].x} ${layers[3].nodes[0]}`}
-                stroke="url(#hv-flow)"
+              {/* Flow line to platform */}
+              <line
+                x1={centerX}
+                y1={bottomY}
+                x2={centerX}
+                y2={platformY - 10}
+                stroke="rgba(37,99,235,0.2)"
                 strokeWidth="2"
-                fill="none"
-                className="hl-flow"
+                strokeDasharray="4 4"
               />
-            </>
+              
+              {/* Animated flow pulse */}
+              <line
+                x1={centerX}
+                y1={bottomY}
+                x2={centerX}
+                y2={platformY - 10}
+                stroke="url(#hv-flow-down)"
+                strokeWidth="2.5"
+                className="hl-flow"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              />
+
+              {/* Arrow at platform entry */}
+              <polygon
+                points={`${centerX},${platformY - 10} ${centerX - 4},${platformY - 16} ${centerX + 4},${platformY - 16}`}
+                fill="#2563EB"
+                opacity="0.6"
+              />
+            </g>
           );
-        })()}
+        })}
 
-        {/* Neural network label */}
-        <text
-          x={intelCenterX}
-          y={intelY + intelHeight - 12}
-          fill="#2563EB"
-          fontSize="10"
-          fontFamily="monospace"
-          fontWeight="700"
-          textAnchor="middle"
-          letterSpacing="1.5"
-        >
-          NEURAL NETWORK
-        </text>
+        {/* ── Knowledge Platform (Center) ── */}
+        <g>
+          {/* Platform container */}
+          <rect
+            x={platformX}
+            y={platformY}
+            width={platformWidth}
+            height={platformHeight}
+            rx="12"
+            fill="url(#hv-platform-grad)"
+            filter="url(#hv-glow)"
+          />
+          
+          {/* Dot pattern overlay */}
+          <rect
+            x={platformX}
+            y={platformY}
+            width={platformWidth}
+            height={platformHeight}
+            rx="12"
+            fill="url(#hv-dots)"
+          />
 
-        {/* ── Output cards (right) ── */}
-        {outputs.map((o, i) => (
-          <g key={`out-${i}`}>
-            <rect
-              x={outputX}
-              y={o.y}
-              width={outputWidth}
-              height={outputHeight}
-              rx="8"
-              fill="#F0F5FF"
-              stroke="#CBD9EF"
-              strokeWidth="1"
-            />
-            <circle
-              cx={outputX + 18}
-              cy={o.y + outputHeight / 2}
-              r="3"
-              fill="#0950CD"
-              className="hl-pulse"
-              style={{ animationDelay: `${i * 0.3 + 1}s` }}
-            />
-            <text
-              x={outputX + 32}
-              y={o.y + outputHeight / 2 + 4}
-              fill="#0A1A3A"
-              fontSize="13"
-              fontFamily="Inter, sans-serif"
-              fontWeight="600"
-            >
-              {o.label}
-            </text>
-          </g>
-        ))}
+          {/* Platform title */}
+          <text
+            x={platformX + platformWidth / 2}
+            y={platformY + 25}
+            fill="white"
+            fontSize="13"
+            fontFamily="monospace"
+            fontWeight="700"
+            textAnchor="middle"
+            letterSpacing="3"
+          >
+            KNOWLEDGE PLATFORM
+          </text>
 
-        {/* ── Arrow indicators ── */}
-        {/* Arrow from sources to intelligence */}
-        <g transform="translate(280, 250)">
-          <path d="M0,0 L20,0" stroke="#2563EB" strokeWidth="2" fill="none" />
-          <polygon points="20,0 14,-4 14,4" fill="#2563EB" />
+          {/* Subtitle */}
+          <text
+            x={platformX + platformWidth / 2}
+            y={platformY + 42}
+            fill="rgba(255,255,255,0.7)"
+            fontSize="9"
+            fontFamily="Inter, sans-serif"
+            fontWeight="500"
+            textAnchor="middle"
+          >
+            AI-Powered Intelligence Layer
+          </text>
+
+          {/* Processing stages */}
+          {stages.map((stage, i) => (
+            <g key={`stage-${i}`}>
+              <rect
+                x={stage.x - 50}
+                y={platformY + 60}
+                width="100"
+                height="30"
+                rx="6"
+                fill="rgba(255,255,255,0.15)"
+                stroke="rgba(255,255,255,0.3)"
+                strokeWidth="1"
+              />
+              <text
+                x={stage.x}
+                y={platformY + 80}
+                fill="white"
+                fontSize="11"
+                fontFamily="Inter, sans-serif"
+                fontWeight="600"
+                textAnchor="middle"
+              >
+                {stage.label}
+              </text>
+              
+              {/* Processing indicator */}
+              <circle
+                cx={stage.x}
+                cy={platformY + 68}
+                r="2.5"
+                fill="#00E0FF"
+                className="hl-pulse"
+                style={{ animationDelay: `${i * 0.3}s` }}
+              />
+            </g>
+          ))}
+
+          {/* Flow indicators inside platform */}
+          <path
+            d={`M ${stages[0].x + 50} ${platformY + 75} L ${stages[1].x - 50} ${platformY + 75}`}
+            stroke="rgba(255,255,255,0.3)"
+            strokeWidth="1.5"
+            markerEnd="url(#arrow-white)"
+          />
+          <path
+            d={`M ${stages[1].x + 50} ${platformY + 75} L ${stages[2].x - 50} ${platformY + 75}`}
+            stroke="rgba(255,255,255,0.3)"
+            strokeWidth="1.5"
+            markerEnd="url(#arrow-white)"
+          />
         </g>
-        {/* Arrow from intelligence to outputs */}
-        <g transform="translate(500, 250)">
-          <path d="M0,0 L20,0" stroke="#0950CD" strokeWidth="2" fill="none" />
-          <polygon points="20,0 14,-4 14,4" fill="#0950CD" />
-        </g>
 
-        {/* ── Bottom labels ── */}
-        <text x={sourceX + sourceWidth / 2} y={420} fill="#2D4A7A" fontSize="10" fontFamily="monospace" textAnchor="middle" opacity="0.6">
-          data sources
+        {/* Arrow marker definition */}
+        <defs>
+          <marker id="arrow-white" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 6 3, 0 6" fill="rgba(255,255,255,0.5)" />
+          </marker>
+        </defs>
+
+        {/* ── Output Results (Bottom Row) ── */}
+        <text x={W / 2} y={outputY - 20} fill="#2563EB" fontSize="11" fontFamily="monospace" fontWeight="700" textAnchor="middle" letterSpacing="2.5">
+          INTELLIGENT OUTPUTS
         </text>
-        <text x={intelCenterX} y={420} fill="#2563EB" fontSize="10" fontFamily="monospace" textAnchor="middle" opacity="0.6" fontWeight="600">
-          AI processes everything
-        </text>
-        <text x={outputX + outputWidth / 2} y={420} fill="#2D4A7A" fontSize="10" fontFamily="monospace" textAnchor="middle" opacity="0.6">
-          you get results
-        </text>
+
+        {outputs.map((o, i) => {
+          const centerX = o.x + outputWidth / 2;
+          const platformBottom = platformY + platformHeight;
+          
+          return (
+            <g key={`out-${i}`}>
+              {/* Flow line from platform */}
+              <line
+                x1={centerX}
+                y1={platformBottom + 10}
+                x2={centerX}
+                y2={outputY}
+                stroke="rgba(37,99,235,0.2)"
+                strokeWidth="2"
+                strokeDasharray="4 4"
+              />
+              
+              {/* Animated flow pulse */}
+              <line
+                x1={centerX}
+                y1={platformBottom + 10}
+                x2={centerX}
+                y2={outputY}
+                stroke="url(#hv-flow-down)"
+                strokeWidth="2.5"
+                className="hl-flow"
+                style={{ animationDelay: `${i * 0.2 + 1}s` }}
+              />
+
+              {/* Arrow at output entry */}
+              <polygon
+                points={`${centerX},${outputY} ${centerX - 4},${outputY - 6} ${centerX + 4},${outputY - 6}`}
+                fill="#2563EB"
+                opacity="0.6"
+              />
+
+              {/* Output card */}
+              <rect
+                x={o.x}
+                y={outputY}
+                width={outputWidth}
+                height={outputHeight}
+                rx="8"
+                fill="#F0F9FF"
+                stroke="#0950CD"
+                strokeWidth="1.5"
+              />
+
+              {/* Result indicator */}
+              <circle
+                cx={centerX}
+                cy={outputY + 16}
+                r="5"
+                fill="#00E0FF"
+                opacity="0.2"
+              />
+              <circle
+                cx={centerX}
+                cy={outputY + 16}
+                r="2.5"
+                fill="#00E0FF"
+                className="hl-pulse"
+                style={{ animationDelay: `${i * 0.25 + 1.5}s` }}
+              />
+
+              {/* Label */}
+              <text
+                x={centerX}
+                y={outputY + 38}
+                fill="#0A1A3A"
+                fontSize="11"
+                fontFamily="Inter, sans-serif"
+                fontWeight="700"
+                textAnchor="middle"
+              >
+                {o.label}
+              </text>
+            </g>
+          );
+        })}
+
+        {/* ── Decorative elements ── */}
+        <rect
+          x={platformX - 10}
+          y={platformY - 10}
+          width={platformWidth + 20}
+          height={platformHeight + 20}
+          rx="16"
+          fill="none"
+          stroke="rgba(37,99,235,0.1)"
+          strokeWidth="1"
+          strokeDasharray="8 4"
+        />
       </svg>
 
       {/* Vignette */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-30" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-20" />
     </div>
   );
 }

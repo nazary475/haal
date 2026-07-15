@@ -19,7 +19,7 @@ export function PartnersSection({
 
   return (
     <section
-      className="hl-container hl-section-pad py-20 md:py-28 border-t border-hl-border"
+      className="hl-container hl-section-pad py-12 md:py-14 border-t border-hl-border"
       aria-labelledby="partners-heading"
     >
       <Reveal>

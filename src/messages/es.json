@@ -4,9 +4,9 @@
     "localeFlag": "ES"
   },
   "nav": {
-    "solutions": "Lo que hacemos",
+    "solutions": "¿Qué hacemos?",
     "projects": "Nuestro trabajo",
-    "research": "Perspectivas",
+    "research": "Artículos de Investigación",
     "network": "Socios",
     "about": "Acerca de",
     "contact": "Contacto",
@@ -178,10 +178,10 @@
       "meta": "haal-lab.solutions / nuestro-trabajo"
     },
     "research": {
-      "eyebrow": "Perspectivas",
+      "eyebrow": "Artículos de Investigación",
       "title": "Lo que estamos aprendiendo sobre IA.",
       "lead": "Compartimos lo que aprendemos mientras construimos — qué funciona, qué no y qué viene después. Escrito en lenguaje sencillo para líderes empresariales y equipos técnicos por igual.",
-      "meta": "haal-lab.solutions / perspectivas"
+      "meta": "haal-lab.solutions / investigacion"
     },
     "network": {
       "eyebrow": "Socios",

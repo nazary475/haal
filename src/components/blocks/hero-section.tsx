@@ -13,14 +13,14 @@ export function HeroSection() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
+      className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16"
     >
       {/* Background layers */}
       <div className="pointer-events-none absolute inset-0 hl-radial-glow" />
       <div className="pointer-events-none absolute inset-0 hl-grid-bg opacity-60" />
 
       <div className="hl-container hl-section-pad relative">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
           {/* Copy column */}
           <div className="lg:col-span-6">
             <Reveal>
@@ -54,7 +54,7 @@ export function HeroSection() {
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_40px_-8px_rgba(0,224,255,0.6)]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_40px_-8px_rgba(96,165,250,0.6)]"
                 >
                   {t("discussProject")}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -69,7 +69,7 @@ export function HeroSection() {
             </Reveal>
 
             <Reveal delay={0.32}>
-              <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <ul className="mt-10 flex flex-wrap items-center justify-start gap-6 sm:gap-8">
                 {[
                   { icon: ShieldCheck, label: t("feature1") },
                   { icon: Terminal, label: t("feature2") },
@@ -77,10 +77,14 @@ export function HeroSection() {
                 ].map(({ icon: Icon, label }) => (
                   <li
                     key={label}
-                    className="flex items-center gap-2 text-xs text-hl-muted"
+                    className="flex items-center gap-2.5"
                   >
-                    <Icon className="h-3.5 w-3.5 text-hl-cyan" />
-                    {label}
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-hl-cyan/10">
+                      <Icon className="h-5 w-5 text-hl-cyan" />
+                    </div>
+                    <span className="text-base font-bold text-foreground">
+                      {label}
+                    </span>
                   </li>
                 ))}
               </ul>

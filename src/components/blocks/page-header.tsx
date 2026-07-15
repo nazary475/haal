@@ -11,7 +11,7 @@ export function PageHeader({ pageKey }: { pageKey: string }) {
   const t = useTranslations(`pageHeaders.${pageKey}`);
 
   return (
-    <header className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
+    <header className="relative overflow-hidden pt-24 pb-10 md:pt-28 md:pb-12">
       <div className="pointer-events-none absolute inset-0 hl-radial-glow opacity-70" />
       <div className="pointer-events-none absolute inset-0 hl-grid-bg opacity-40" />
       <div className="hl-container hl-section-pad relative">

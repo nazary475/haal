@@ -255,35 +255,123 @@ export function howToSchema() {
   };
 }
 
-/** Article schema — for research articles. */
+/** Article schema — for research articles with comprehensive SEO/GEO optimization. */
 export function articleSchema(opts: {
   title: string;
   description: string;
   date: string;
   path: string;
+  author?: string;
+  tags?: string[];
+  category?: string;
+  readTime?: string;
+  wordCount?: number;
 }) {
+  // Calculate word count from description if not provided
+  const estimatedWordCount = opts.wordCount || Math.ceil(opts.description.split(" ").length * 50);
+  
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "TechArticle", "ScholarlyArticle"],
     headline: opts.title,
     description: opts.description,
+    abstract: opts.description,
     datePublished: opts.date,
     dateModified: opts.date,
+    
     author: {
       "@type": "Person",
-      name: "Hussain Nazary",
+      name: opts.author || "Haal Lab Team",
       url: SITE.url,
+      jobTitle: "AI Engineering Team",
       worksFor: {
         "@type": "Organization",
         name: SITE.name,
+        url: SITE.url,
       },
     },
+    
     publisher: {
       "@type": "Organization",
       name: SITE.name,
-      logo: { "@type": "ImageObject", url: `${SITE.url}/logo.svg` },
+      url: SITE.url,
+      logo: { 
+        "@type": "ImageObject", 
+        url: `${SITE.url}/logo.svg`,
+        width: 600,
+        height: 600,
+      },
     },
-    mainEntityOfPage: `${SITE.url}${opts.path}`,
+    
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE.url}${opts.path}`,
+    },
+    
+    // Enhanced properties for GEO
+    keywords: opts.tags?.join(", "),
+    articleSection: opts.category || "AI Engineering",
+    articleBody: opts.description,
+    wordCount: estimatedWordCount,
+    
+    // Time to read - helps AI understand article length
+    timeRequired: opts.readTime || "PT15M",
+    
+    // Indicate this is technical/educational content
+    genre: ["Technology", "Artificial Intelligence", "Engineering"],
+    about: {
+      "@type": "Thing",
+      name: "Artificial Intelligence Engineering",
+      description: "Practical AI deployment and LLM engineering",
+    },
+    
+    // Educational value for AI indexing
+    educationalUse: "Professional Development",
+    learningResourceType: "Technical Article",
+    
+    // Indicate expertise level
+    audience: {
+      "@type": "Audience",
+      audienceType: ["Developers", "Engineers", "Technical Leaders", "AI Practitioners"],
+    },
+    
+    // Breadcrumb navigation
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: SITE.url,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Research",
+          item: `${SITE.url}/research`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: opts.title,
+          item: `${SITE.url}${opts.path}`,
+        },
+      ],
+    },
+    
+    // Citation metadata for academic/research indexing
+    citation: opts.tags?.map(tag => ({
+      "@type": "CreativeWork",
+      name: tag,
+    })),
+    
+    // License information
+    license: "https://creativecommons.org/licenses/by-sa/4.0/",
+    
+    // Indicate this is original research/content
+    isBasedOn: SITE.url,
+    inLanguage: ["en", "de", "fr"],
   };
 }
 

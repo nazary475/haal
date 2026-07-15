@@ -172,7 +172,7 @@ export function ContactForm() {
         <Button
           type="submit"
           disabled={state.submitting}
-          className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-6 py-3 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90 disabled:opacity-60"
+          className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-6 py-3 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90 disabled:opacity-60"
         >
           {state.submitting ? (
             <>

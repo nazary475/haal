@@ -58,6 +58,13 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "/research/feed.xml", title: "Haal Lab Research Articles RSS Feed" },
+      ],
+    },
+  },
   icons: {
     icon: [
       { url: '/icon', sizes: '32x32', type: 'image/png' },

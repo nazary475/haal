@@ -32,7 +32,7 @@ export function RelatedLinks({
 
   return (
     <section
-      className="hl-container hl-section-pad py-16 md:py-20 border-t border-hl-border bg-hl-surface/30"
+      className="hl-container hl-section-pad py-10 md:py-12 border-t border-hl-border bg-hl-surface/30"
       aria-label="Related pages"
     >
       <Reveal>
@@ -42,7 +42,7 @@ export function RelatedLinks({
         </h2>
       </Reveal>
 
-      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
         {related.map((item, i) => (
           <Reveal key={item.href} delay={i * 0.06}>
             <Link

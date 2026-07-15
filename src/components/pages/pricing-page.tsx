@@ -229,7 +229,7 @@ export function PricingPage() {
   return (
     <>
       {/* Page Header */}
-      <header className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
+      <header className="relative overflow-hidden pt-24 pb-10 md:pt-28 md:pb-12">
         <div className="pointer-events-none absolute inset-0 hl-radial-glow opacity-70" />
         <div className="pointer-events-none absolute inset-0 hl-grid-bg opacity-40" />
         <div className="hl-container hl-section-pad relative">
@@ -251,7 +251,7 @@ export function PricingPage() {
 
       {/* ── Tier cards ── */}
       <SectionShell id="pricing-tiers">
-        <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
           {TIERS.map((tier, i) => (
             <Reveal key={tier.id} delay={i * 0.08}>
               <article
@@ -273,7 +273,7 @@ export function PricingPage() {
 
                 {/* Popular badge */}
                 {tier.popular && (
-                  <span className="absolute right-5 top-5 inline-flex items-center rounded-full bg-hl-cyan px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-[#04141A]">
+                  <span className="absolute right-5 top-5 inline-flex items-center rounded-full bg-hl-cyan px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-gray-900">
                     Most Popular
                   </span>
                 )}
@@ -336,7 +336,7 @@ export function PricingPage() {
                     href="/contact"
                     className={`group/btn mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all ${
                       tier.popular
-                        ? "bg-hl-cyan text-[#04141A] hover:bg-hl-cyan/90 hover:shadow-[0_0_40px_-8px_rgba(37,99,235,0.6)]"
+                        ? "bg-hl-cyan text-gray-900 font-bold hover:bg-hl-cyan/90 hover:shadow-[0_0_40px_-8px_rgba(96,165,250,0.6)]"
                         : "border border-hl-border text-foreground hover:border-hl-cyan/40 hover:text-hl-cyan"
                     }`}
                   >
@@ -467,7 +467,7 @@ export function PricingPage() {
               <div className="mt-8">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_40px_-8px_rgba(74,243,248,0.6)]"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_40px_-8px_rgba(96,165,250,0.6)]"
                 >
                   Apply during your discovery call
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -501,7 +501,7 @@ export function PricingPage() {
                 <div className="flex flex-col gap-3">
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_40px_-8px_rgba(0,224,255,0.6)]"
+                    className="group inline-flex items-center justify-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90 hover:shadow-[0_0_40px_-8px_rgba(96,165,250,0.6)]"
                   >
                     Talk to us
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

@@ -128,7 +128,7 @@ export function SolutionsPage() {
       {/* Capability deep-dives */}
       <div className="hl-container hl-section-pad divide-y divide-hl-border">
         {CAPABILITIES.map((cap, idx) => (
-          <section key={cap.id} id={cap.id} className="py-16 md:py-24">
+          <section key={cap.id} id={cap.id} className="py-10 md:py-14">
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <Reveal>
@@ -230,7 +230,7 @@ export function SolutionsPage() {
             </div>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-5 py-3 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90"
+              className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-5 py-3 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90"
             >
               Book a call
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

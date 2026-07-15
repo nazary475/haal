@@ -107,18 +107,18 @@ export function AboutPage() {
           </Lead>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
           {PRINCIPLES.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.08}>
-              <article className="flex h-full gap-5 rounded-2xl border border-hl-border bg-hl-surface/40 p-7">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border border-hl-border bg-hl-surface-2 text-hl-cyan">
-                  <p.icon className="h-5 w-5" />
+              <article className="flex h-full gap-5 p-2">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-hl-cyan/10 text-hl-cyan">
+                  <p.icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                  <h3 className="text-lg font-bold tracking-tight text-foreground">
                     {p.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-hl-muted">
+                  <p className="mt-3 text-sm leading-relaxed text-hl-muted">
                     {p.description}
                   </p>
                 </div>
@@ -167,7 +167,7 @@ export function AboutPage() {
             </div>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-semibold text-[#04141A] transition-all hover:bg-hl-cyan/90"
+              className="group inline-flex items-center gap-2 rounded-full bg-hl-cyan px-6 py-3.5 text-sm font-bold text-gray-900 transition-all hover:bg-hl-cyan/90"
             >
               Start a conversation
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

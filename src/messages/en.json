@@ -4,9 +4,9 @@
     "localeFlag": "EN"
   },
   "nav": {
-    "solutions": "What We Do",
+    "solutions": "What We Do?",
     "projects": "Our Work",
-    "research": "Insights",
+    "research": "Research Articles",
     "network": "Partners",
     "about": "About",
     "contact": "Contact",
@@ -177,10 +177,10 @@
       "meta": "haal-lab.solutions / our-work"
     },
     "research": {
-      "eyebrow": "Insights",
+      "eyebrow": "Research Articles",
       "title": "What we're learning about AI.",
       "lead": "We share what we learn as we build — what works, what doesn't, and what's coming next. Written in plain language for business leaders and technical teams alike.",
-      "meta": "haal-lab.solutions / insights"
+      "meta": "haal-lab.solutions / research"
     },
     "network": {
       "eyebrow": "Partners",
