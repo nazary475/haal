@@ -55,6 +55,11 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: ${{ secrets.NEXT_PUBLIC_BASE_PATH }}
           # Optional: set to a Formspree endpoint to enable backend form submission.
           NEXT_PUBLIC_FORMSPREE_ENDPOINT: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ENDPOINT }}
+          # IMPORTANT: GitHub Pages doesn't support API routes (server-side code)
+          # The GROQ_API_KEY won't work with static export to GitHub Pages.
+          # To use the AI assistant, deploy to Vercel, Netlify, or a Node.js server instead.
+          # See DEPLOYMENT_GUIDE.md for instructions.
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           NODE_ENV: production
         run: npm run build
 
