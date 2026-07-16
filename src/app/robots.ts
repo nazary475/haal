@@ -23,8 +23,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           "/api/",           // Protect API routes (if any in future)
           "/_next/",         // Block Next.js internal files
-          "/out/",           // Block build output directory
-          "/*.json$",        // Block JSON files (except specific ones)
         ],
       },
       {

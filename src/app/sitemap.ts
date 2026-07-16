@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/routing";
+import { getAllArticles } from "@/lib/research-articles";
 
 const SITE_URL = "https://haal-lab.solutions";
 
@@ -11,6 +12,7 @@ export const dynamic = "force-static";
  * 
  * Comprehensive sitemap with:
  * - All localized pages (en, de, fr, es, it)
+ * - Individual research articles
  * - SEO-optimized priorities and change frequencies
  * - hreflang alternates for international SEO
  * - Proper last modified dates
@@ -18,8 +20,8 @@ export const dynamic = "force-static";
  * Priority Guidelines:
  * 1.0 = Homepage (most important)
  * 0.9 = Core business pages (Solutions)
- * 0.8 = Important content (Projects, Network, Pricing)
- * 0.7 = Regularly updated content (Research)
+ * 0.8 = Important content (Projects, Network, Pricing, Research Articles)
+ * 0.7 = Regularly updated content (Research Index)
  * 0.6 = Company info (About)
  * 0.5 = Contact and support pages
  */
@@ -100,6 +102,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: now,
         changeFrequency: route.changeFrequency,
         priority: route.priority,
+        alternates: { 
+          languages: alternates 
+        },
+      });
+    }
+  }
+
+  // Add individual research articles
+  const articles = getAllArticles();
+  for (const article of articles) {
+    for (const locale of locales) {
+      const url = `${SITE_URL}/${locale}/research/${article.id}`;
+      
+      // Create hreflang alternates for each article
+      const alternates: Record<string, string> = {};
+      for (const altLocale of locales) {
+        alternates[altLocale] = `${SITE_URL}/${altLocale}/research/${article.id}`;
+      }
+      alternates["x-default"] = `${SITE_URL}/en/research/${article.id}`;
+
+      entries.push({
+        url,
+        lastModified: new Date(article.date),
+        changeFrequency: "monthly",
+        priority: 0.8,
         alternates: { 
           languages: alternates 
         },
